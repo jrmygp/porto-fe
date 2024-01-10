@@ -12,12 +12,13 @@
 
 html,
 body {
-  padding: 0;
+  padding: 0px;
   margin: 0;
   font-size: 14px;
   background-color: #0f1624;
   color: #f8f8f8;
   font-weight: 500;
+  scroll-behavior: smooth;
 }
 
 ul {
