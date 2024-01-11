@@ -1,9 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
+
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io";
 
 function Navbar() {
   return (
-    <nav className="flex justify-center sm:justify-between items-center sticky top-0 left-0 w-full px-20 py-11 flex-wrap gap-10 z-10">
+    <nav className="flex justify-center sm:justify-between items-center w-full px-20 py-11 flex-wrap gap-10 z-10">
       <p className="text-3xl">Jeremy's Portfolio</p>
 
       <div className="flex justify-between items-center gap-20 flex-wrap">
@@ -35,4 +36,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default memo(Navbar);

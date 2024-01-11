@@ -1,12 +1,13 @@
-import React from "react";
+import React, { memo } from "react";
+
 import image from "../assets/hero_img.png";
 import Button from "./Button";
 
 function Hero() {
   return (
     <div className="flex flex-col gap-8 relative">
-      <h1 className="text-6xl">Hello, Jeremy here!</h1>
-      <article className="flex flex-col gap-16">
+      <h1 className="text-6xl z-10">Hello, Jeremy here!</h1>
+      <article className="flex flex-col gap-16 z-10">
         <h2 className="text-4xl">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta harum quisquam corporis cum minus laboriosam
           iusto veritatis, culpa vel quod!
@@ -20,4 +21,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default memo(Hero);
