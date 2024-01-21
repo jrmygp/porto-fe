@@ -27,7 +27,7 @@ function App() {
       </div>
 
       <div className="flex flex-col gap-64 px-20 lg:px-40 mt-20 pb-10">
-        <section id="about-me">
+        <section id="introduction">
           <Hero />
         </section>
 
@@ -40,6 +40,8 @@ function App() {
 
           <AdditionalTech />
         </section>
+
+        <section id="about-me"></section>
 
         <div className={`${classes.menu} ${!menuIsOpen && classes.close}`}>
           <MobileMenuList onClick={toggleMenu} />

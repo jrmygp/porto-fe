@@ -45,3 +45,9 @@ p {
   font-size: 14px;
   margin: 0;
 }
+.project-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

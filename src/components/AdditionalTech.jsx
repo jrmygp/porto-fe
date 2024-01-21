@@ -13,13 +13,16 @@ const AdditionalTech = () => {
           <span>Redux</span>
         </li>
         <li className="text-white text-3xl">
-          <span>FCM</span>
+          <span>Firebase</span>
         </li>
         <li className="text-white text-3xl">
           <span>Postman</span>
         </li>
         <li className="text-white text-3xl">
           <span>HTML/CSS</span>
+        </li>
+        <li className="text-white text-3xl">
+          <span>Tailwind</span>
         </li>
         <li className="text-white text-3xl">
           <span>MySQL</span>

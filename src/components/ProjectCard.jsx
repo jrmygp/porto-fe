@@ -13,7 +13,7 @@ function ProjectCard() {
       <div className="bg-gradient-to-r from-[#13ADC7] via-[#6978D1] to-[#945DD6] h-1 w-[300px]" />
 
       <article>
-        <p className="text-left text-2xl">
+        <p className="text-left text-2xl project-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ab eveniet voluptas id dicta necessitatibus
           repellendus quis, commodi autem maxime recusandae, ut quasi deserunt ipsa, perspiciatis impedit accusantium?
           Doloribus suscipit ex veritatis porro consequuntur dignissimos. Mollitia nostrum dolorum quidem quae?
