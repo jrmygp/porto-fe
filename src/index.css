@@ -26,7 +26,11 @@ ul {
   margin: 0px;
 }
 ul > li {
-  list-style: none;
+  list-style: disc;
+}
+li span {
+  position: relative;
+  left: -10px;
 }
 a,
 a:hover {

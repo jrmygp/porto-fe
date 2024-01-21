@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import classes from "./App.module.css";
 import MobileMenuList from "./components/MobileMenuList";
 import Projects from "./components/Projects";
+import TechStacks from "./components/TechStacks";
+import AdditionalTech from "./components/AdditionalTech";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -24,16 +26,20 @@ function App() {
         <MobileMenuButton toggle={toggleMenu} isOpen={menuIsOpen} />
       </div>
 
-      <div className="flex flex-col gap-64 px-20 lg:px-40 mt-20">
-        <section id="projects">
+      <div className="flex flex-col gap-64 px-20 lg:px-40 mt-20 pb-10">
+        <section id="about-me">
           <Hero />
         </section>
 
-        <section id="technologies">
+        <section id="projects">
           <Projects />
         </section>
 
-        <section id="about-me"></section>
+        <section id="technologies" className="flex flex-col gap-32">
+          <TechStacks />
+
+          <AdditionalTech />
+        </section>
 
         <div className={`${classes.menu} ${!menuIsOpen && classes.close}`}>
           <MobileMenuList onClick={toggleMenu} />
