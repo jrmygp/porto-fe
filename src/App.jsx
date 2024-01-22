@@ -8,6 +8,8 @@ import MobileMenuList from "./components/MobileMenuList";
 import Projects from "./components/Projects";
 import TechStacks from "./components/TechStacks";
 import AdditionalTech from "./components/AdditionalTech";
+import AboutMe from "./components/AboutMe";
+import Footer from "./components/Footer";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -26,7 +28,7 @@ function App() {
         <MobileMenuButton toggle={toggleMenu} isOpen={menuIsOpen} />
       </div>
 
-      <div className="flex flex-col gap-64 px-20 lg:px-40 mt-20 pb-10">
+      <div className="flex flex-col gap-64 px-10 lg:px-40 mt-20 pb-10">
         <section id="introduction">
           <Hero />
         </section>
@@ -41,7 +43,11 @@ function App() {
           <AdditionalTech />
         </section>
 
-        <section id="about-me"></section>
+        <section id="about-me">
+          <AboutMe />
+        </section>
+
+        <Footer />
 
         <div className={`${classes.menu} ${!menuIsOpen && classes.close}`}>
           <MobileMenuList onClick={toggleMenu} />

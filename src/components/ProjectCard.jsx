@@ -5,12 +5,12 @@ import Button from "./Button";
 
 function ProjectCard() {
   return (
-    <div className="h-[700px] max-w-[550px] shadow-[0px_0px_12px_0px_#fff] rounded-tl-[50px] rounded-br-[50px] z-20 flex flex-col items-center gap-7 p-6 bg-primary">
-      <img className="h-64 w-full object-cover rounded-tl-[40px]" src={placeholder} alt="project-img" />
+    <div className="h-[700px] max-w-[550px] shadow-[0px_0px_12px_0px_#fff] rounded-xl z-20 flex flex-col items-center gap-7 p-6 bg-primary">
+      <img className="h-64 w-full object-cover rounded-xl" src={placeholder} alt="project-img" />
 
       <h2 className="text-4xl">Project Title</h2>
 
-      <div className="bg-gradient-to-r from-[#13ADC7] via-[#6978D1] to-[#945DD6] h-1 w-[300px]" />
+      <div className="bg-gradient-to-r from-[#13ADC7] via-[#6978D1] to-[#945DD6] h-1 w-full" />
 
       <article>
         <p className="text-left text-2xl project-description">
