@@ -28,7 +28,7 @@ function App() {
         <MobileMenuButton toggle={toggleMenu} isOpen={menuIsOpen} />
       </div>
 
-      <div className="flex flex-col gap-64 px-10 lg:px-40 mt-20 pb-10">
+      <div className="flex flex-col gap-64 px-5 lg:px-40 mt-20 pb-10">
         <section id="introduction">
           <Hero />
         </section>
