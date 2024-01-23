@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { memo } from "react";
 
 import image from "../assets/hero_img.png";
@@ -7,11 +8,13 @@ function Hero() {
   return (
     <div className="flex flex-col gap-8">
       <h1 className="text-6xl z-10">Hello, Jeremy here!</h1>
-      <article className="flex flex-col gap-16 z-10">
-        <h2 className="text-4xl">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta harum quisquam corporis cum minus laboriosam
-          iusto veritatis, culpa vel quod!
+      <article className="flex flex-col gap-10 z-10">
+        <h2 className="text-4xl max-w-[800px] italic">
+          "Embrace challenges as opportunities, let passion drive your journey, and resilience be the force that turns
+          setbacks into comebacks. In the dance of life, each step forward paints your unique story with determination
+          and growth. Your journey is a masterpiece in the making, so dance boldly to the rhythm of your dreams."
         </h2>
+        <p className="text-4xl">- Wise old man</p>
 
         <Button title="Let's begin" />
       </article>

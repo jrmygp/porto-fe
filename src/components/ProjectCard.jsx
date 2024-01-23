@@ -5,7 +5,7 @@ import Button from "./Button";
 
 function ProjectCard() {
   return (
-    <div className="h-[700px] max-w-[550px] shadow-[0px_0px_12px_0px_#fff] rounded-xl z-20 flex flex-col items-center gap-7 p-6 bg-primary">
+    <div className="h-[700px] shadow-[0px_0px_12px_0px_#fff] rounded-xl z-20 flex flex-col items-center gap-7 p-6 bg-primary">
       <img className="h-64 w-full object-cover rounded-xl" src={placeholder} alt="project-img" />
 
       <h2 className="text-4xl">Project Title</h2>
