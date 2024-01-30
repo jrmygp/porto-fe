@@ -1,5 +1,6 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/no-unescaped-entities */
-import React, { memo } from "react";
+import { memo } from "react";
 
 import image from "../assets/hero_img.png";
 import Button from "./Button";

@@ -1,5 +1,3 @@
-import React from "react";
-
 import profile_img1 from "@/assets/profile-hd1.jpg";
 
 const AboutMe = () => {
@@ -21,7 +19,7 @@ const AboutMe = () => {
           A full stack developer with front end speciality (web app and mobile app).
           <br />
           <br />
-          Contact me if you're looking for a guy who gets the job done!
+          {`Contact me if you're looking for a guy who gets the job done!`}
         </p>
       </div>
     </div>

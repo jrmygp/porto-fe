@@ -1,5 +1,4 @@
-import React from "react";
-
+/* eslint-disable react/jsx-no-target-blank */
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io";
 
 const Footer = () => {

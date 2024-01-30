@@ -1,5 +1,3 @@
-import React from "react";
-
 function MobileMenuList({ onClick }) {
   return (
     <div className="text-text-primary py-28 px-10 flex flex-col gap-10">

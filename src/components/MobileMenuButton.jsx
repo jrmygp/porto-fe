@@ -1,5 +1,3 @@
-import React from "react";
-
 import { IoMdMenu } from "react-icons/io";
 
 function MobileMenuButton({ toggle, isOpen }) {

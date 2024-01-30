@@ -1,11 +1,12 @@
-import React, { memo } from "react";
+/* eslint-disable react/jsx-no-target-blank */
+import { memo } from "react";
 
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io";
 
 function Navbar() {
   return (
     <nav className="flex justify-center sm:justify-between items-center w-full px-20 py-11 flex-wrap gap-10 bg-primary">
-      <p className="text-3xl">Jeremy's Portfolio</p>
+      <p className="text-3xl">{`Jeremy's Portfolio`}</p>
 
       <div className="flex justify-between items-center gap-20 flex-wrap">
         <a className="text-3xl" href="#projects">
