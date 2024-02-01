@@ -3,11 +3,18 @@ import { memo, useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+
+import { IoMdClose } from "react-icons/io";
+
 import ProjectCard from "./ProjectCard";
 import axiosInstance from "@/config/api";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [description, setDescription] = useState("");
 
   const responsive = {
     superLargeDesktop: {
@@ -19,11 +26,11 @@ function Projects() {
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1200, min: 464 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 690, min: 0 },
       items: 1,
     },
   };
@@ -36,6 +43,18 @@ function Projects() {
       console.log(error);
     }
   };
+
+  const openModal = (description) => {
+    setOpen(true);
+    setDescription(description);
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+    setDescription("");
+  };
+
+  const closeButton = <IoMdClose className="text-primary text-2xl" />;
 
   useEffect(() => {
     fetchProjects();
@@ -64,12 +83,23 @@ function Projects() {
                 image={project.image}
                 url={project.url}
                 stacks={project.stacks}
+                onClick={openModal}
               />
             );
           })}
       </Carousel>
 
-      {/* <section className="grid grid-cols-1 gap-40 lg:grid-cols-2"></section> */}
+      <Modal
+        open={open}
+        onClose={closeModal}
+        center
+        closeIcon={closeButton}
+        classNames={{
+          modal: "rounded-xl",
+        }}
+      >
+        <h2 className="text-2xl text-primary m-0">{description}</h2>
+      </Modal>
     </div>
   );
 }

@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
+
+import { IoReader, IoLink } from "react-icons/io5";
+
 import Button from "./Button";
 
-function ProjectCard({ title, description, url, image, stacks = [] }) {
+function ProjectCard({ title, description, url, image, stacks = [], onClick }) {
   const hostName = import.meta.env.VITE_PUBLIC_API;
 
   return (
@@ -12,13 +15,9 @@ function ProjectCard({ title, description, url, image, stacks = [] }) {
         alt={`${title}-img`}
       />
 
-      <h2 className="text-4xl text-center">{title}</h2>
+      <h2 className="text-4xl text-center h-[60px]">{title}</h2>
 
       <div className="bg-gradient-to-r from-[#13ADC7] via-[#6978D1] to-[#945DD6] h-1 w-full" />
-
-      {/* <article>
-        <p className="text-left text-2xl project-description">{description}</p>
-      </article> */}
 
       <section className="w-full flex flex-col gap-2">
         <p className="text-white text-2xl">Tech used :</p>
@@ -30,7 +29,25 @@ function ProjectCard({ title, description, url, image, stacks = [] }) {
         </div>
       </section>
 
-      <Button title="Look it up" href={url} />
+      <section className="flex items-center gap-4">
+        <Button
+          title={
+            <div className="flex items-center gap-2">
+              <IoReader /> <p className="m-0 text-xl">Read</p>
+            </div>
+          }
+          onClick={() => onClick(description)}
+        />
+
+        <Button
+          title={
+            <div className="flex items-center gap-2">
+              <IoLink /> <p className="m-0 text-xl">Check</p>
+            </div>
+          }
+          href={url}
+        />
+      </section>
     </div>
   );
 }
