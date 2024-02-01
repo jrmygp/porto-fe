@@ -14,6 +14,10 @@ const AdditionalTech = () => {
     }
   };
 
+  const excludedSkills = ["React", "React Native", "Next.js", "Express.js", "Node.js", "JavaScript"];
+
+  const filteredSkills = skills.filter((skill) => !excludedSkills.includes(skill.title));
+
   useEffect(() => {
     fetchSkills();
   }, []);
@@ -22,8 +26,8 @@ const AdditionalTech = () => {
       <h1 className="text-6xl z-10 break-words">Additional technologies and skills</h1>
 
       <div className="flex flex-wrap gap-4">
-        {skills.length > 0 &&
-          skills.map((skill) => {
+        {filteredSkills.length > 0 &&
+          filteredSkills.map((skill) => {
             return (
               <li key={skill.id} className="text-white text-3xl">
                 <span>{skill.title}</span>

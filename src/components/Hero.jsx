@@ -10,7 +10,7 @@ function Hero() {
     <div className="flex flex-col gap-8">
       <h1 className="text-6xl z-10">Hello, Jeremy here!</h1>
       <article className="flex flex-col gap-10 z-10">
-        <h2 className="text-4xl max-w-[800px] italic">
+        <h2 className="text-4xl max-w-[1000px] italic">
           "Embrace challenges as opportunities, let passion drive your journey, and resilience be the force that turns
           setbacks into comebacks. In the dance of life, each step forward paints your unique story with determination
           and growth. Your journey is a masterpiece in the making, so dance boldly to the rhythm of your dreams."

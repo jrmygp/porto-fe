@@ -25,9 +25,6 @@ ul {
   padding: 0px;
   margin: 0px;
 }
-ul > li {
-  list-style: disc;
-}
 li span {
   position: relative;
   left: -10px;

@@ -40,7 +40,7 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col gap-2 justify-center items-center">
-        <p className="text-white text-md">This app is built using :</p>
+        <p className="text-white text-2xl">This app is built using :</p>
 
         <div className="flex flex-wrap gap-2">
           <Tooltip title="Hello world">
