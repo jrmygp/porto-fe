@@ -8,7 +8,7 @@ function ProjectCard({ title, description, url, image, stacks = [], onClick }) {
   const hostName = import.meta.env.VITE_PUBLIC_API;
 
   return (
-    <div className="h-[550px] shadow-[0px_0px_12px_0px_#fff] rounded-xl z-20 flex flex-col items-center gap-7 p-6 bg-primary">
+    <div className="h-[550px] shadow-[0px_0px_3px_0px_#fff] rounded-xl z-20 flex flex-col items-center gap-7 p-6 bg-primary">
       <img
         className="h-64 w-full object-contain rounded-xl bg-primary"
         src={`${hostName}/${image}`}
@@ -20,11 +20,17 @@ function ProjectCard({ title, description, url, image, stacks = [], onClick }) {
       <div className="bg-gradient-to-r from-[#13ADC7] via-[#6978D1] to-[#945DD6] h-1 w-full" />
 
       <section className="w-full flex flex-col gap-2">
-        <p className="text-white text-2xl">Tech used :</p>
+        <p className="text-white text-2xl">Tech Stack</p>
         <div className="flex flex-wrap gap-2">
           {stacks?.length > 0 &&
             stacks.map((stack) => {
-              return <img key={stack.id} src={`${hostName}/${stack.image}`} className="h-10 w-10 object-contain" />;
+              return (
+                <img
+                  key={stack.id}
+                  src={`${hostName}/${stack.image}`}
+                  className="h-10 w-10 object-contain rounded-lg"
+                />
+              );
             })}
         </div>
       </section>

@@ -6,7 +6,6 @@ import gin from "@/assets/gin.png";
 import go from "@/assets/go.png";
 import javascript from "@/assets/javascript.png";
 import vite from "@/assets/vite.png";
-import Tooltip from "./Tooltip";
 
 const Footer = () => {
   return (
@@ -43,9 +42,7 @@ const Footer = () => {
         <p className="text-white text-2xl">This app is built using :</p>
 
         <div className="flex flex-wrap gap-2">
-          <Tooltip title="Hello world">
-            <img src={vite} className="h-10 w-10 object-contain" />
-          </Tooltip>
+          <img src={vite} className="h-10 w-10 object-contain" />
           <img src={react} className="h-10 w-10 object-contain" />
           <img src={gin} className="h-10 w-10 object-contain" />
           <img src={go} className="h-10 w-10 object-contain" />
