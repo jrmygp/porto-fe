@@ -1,4 +1,5 @@
-FROM mhart/alpine-node:20.11.0
+FROM node:20-alpine
+RUN apk add --no-cache git
 # Tell docker to get node.js version 20
 
 WORKDIR /app
