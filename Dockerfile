@@ -4,11 +4,14 @@ FROM node:20-alpine
 WORKDIR /app
 # Set working directory for docker to run commands
 
-COPY ./src .
-# Copy all src folder and paste it to /app (just a dot because working dir is already /app)
+COPY package.json .
+# Copy package.json file so docker can run npm install after
 
 RUN npm install
 # Tell docker to run npm install while app is being build
+
+COPY . .
+# Copy everything else
 
 EXPOSE 5173
 # Still no clue
