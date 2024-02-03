@@ -1,4 +1,4 @@
-FROM node:21-alpine
+FROM mhart/alpine-node:20.11.0
 # Tell docker to get node.js version 20
 
 WORKDIR /app
