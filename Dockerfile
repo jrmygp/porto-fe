@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:21-alpine
 # Tell docker to get node.js version 20
 
 WORKDIR /app
