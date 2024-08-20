@@ -5,15 +5,9 @@ import { IoReader, IoLink } from "react-icons/io5";
 import Button from "./Button";
 
 function ProjectCard({ title, description, url, image, stacks = [], onClick }) {
-  const hostName = import.meta.env.VITE_PUBLIC_API;
-
   return (
-    <div className="h-[550px] shadow-[0px_0px_3px_0px_#fff] rounded-xl z-20 flex flex-col items-center gap-7 p-6 bg-primary">
-      <img
-        className="h-64 w-full object-contain rounded-xl bg-primary"
-        src={`${hostName}/${image}`}
-        alt={`${title}-img`}
-      />
+    <div className="h-[550px] border-2 border-gray-800 rounded-lg z-20 flex flex-col items-center gap-7 p-6 bg-primary">
+      <img className="h-64 w-full object-contain rounded-xl bg-primary" src={image} alt={`${title}-img`} />
 
       <h2 className="text-4xl text-center h-[60px]">{title}</h2>
 
@@ -24,13 +18,7 @@ function ProjectCard({ title, description, url, image, stacks = [], onClick }) {
         <div className="flex flex-wrap gap-2">
           {stacks?.length > 0 &&
             stacks.map((stack) => {
-              return (
-                <img
-                  key={stack.id}
-                  src={`${hostName}/${stack.image}`}
-                  className="h-10 w-10 object-contain rounded-lg"
-                />
-              );
+              return <img key={stack.id} src={stack.image} className="h-10 w-10 object-contain rounded-lg" />;
             })}
         </div>
       </section>

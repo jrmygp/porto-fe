@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useState } from "react";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -9,10 +9,14 @@ import "react-responsive-modal/styles.css";
 import { IoMdClose } from "react-icons/io";
 
 import ProjectCard from "./ProjectCard";
-import axiosInstance from "@/config/api";
+import Nest from "@/assets/project/nest.png";
+import KSS from "@/assets/project/kss.png";
+import Prezent from "@/assets/project/prezent.jpg";
+import SandezaBills from "@/assets/project/sandeza-bills.jpg";
+import Healthymed from "@/assets/project/healthymed.png";
+import Konekt from "@/assets/project/konekt.png";
 
 function Projects() {
-  const [projects, setProjects] = useState([]);
   const [open, setOpen] = useState(false);
   const [description, setDescription] = useState("");
 
@@ -35,14 +39,61 @@ function Projects() {
     },
   };
 
-  const fetchProjects = async () => {
-    try {
-      const res = await axiosInstance.get("/project");
-      setProjects(res.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const projects = [
+    {
+      id: 1,
+      title: "Kolabora Smart System",
+      description:
+        "Multi function app which includes HRGA, CMS, and accounting modules. On top of that the app also provides built-in project & task management and real time chat feature for internal usage. This app intends to make people’s jobs easier to track and reduce the use of long-winded paper forms. After this application was implemented in this company, there has been a reduction in the use of paper forms for internal administration problems and an increase in ease of work between different divisions.",
+      image: KSS,
+      url: "https://kolabora.ksshub.com/",
+      stacks: [],
+    },
+    {
+      id: 2,
+      title: "KSS Nest",
+      description:
+        "This is the mobile application version for Kolabora Smart System. Light multi functional app where users can be mobile with their work. Developed this application and also deployed it to the app store and play store.",
+      image: Nest,
+      url: "https://play.google.com/store/apps/details?id=com.kolabora.kssmobileapp&hl=id",
+      stacks: [],
+    },
+    {
+      id: 3,
+      title: "Prezent",
+      description:
+        "Prezent offers comprehensive tools for your organization to develop a loyalty program, including point generation systems, campaign administration, digital voucher distribution, and comprehensive analytical reports. Prezent is designed to be incredibly user-friendly, making it simple to use.",
+      image: Prezent,
+      url: "",
+      stacks: [],
+    },
+    {
+      id: 4,
+      title: "Sandeza Bills",
+      description:
+        "Prezent offers comprehensive tools for your organization to develop a loyalty program, including point generation systems, campaign administration, digital voucher distribution, and comprehensive analytical reports. Prezent is designed to be incredibly user-friendly, making it simple to use.",
+      image: SandezaBills,
+      url: "",
+      stacks: [],
+    },
+    {
+      id: 5,
+      title: "Healthymed",
+      description:
+        "An e-commerce based platform for medicine. This project I did for my final project at my bootcamp in Purwadhika School and developed with a team of 3 developers. My role in this project as full stack developer using React, Next, and express with fully working transactional flow from user end to admin end.",
+      image: Healthymed,
+      url: "",
+      stacks: [],
+    },
+    {
+      id: 6,
+      title: "Konekt",
+      description: "Simple social media platform where user can share their picture with customable caption.",
+      image: Konekt,
+      url: "",
+      stacks: [],
+    },
+  ];
 
   const openModal = (description) => {
     setOpen(true);
@@ -55,10 +106,6 @@ function Projects() {
   };
 
   const closeButton = <IoMdClose className="text-primary text-2xl" />;
-
-  useEffect(() => {
-    fetchProjects();
-  }, []);
 
   return (
     <div className="flex flex-col gap-24">
@@ -73,7 +120,7 @@ function Projects() {
         keyBoardControl
         itemClass="p-[10px] pb-[40px]"
       >
-        {projects.length > 0 &&
+        {projects?.length > 0 &&
           projects.map((project) => {
             return (
               <ProjectCard
@@ -98,7 +145,7 @@ function Projects() {
           modal: "rounded-xl",
         }}
       >
-        <h2 className="text-2xl text-primary m-0">{description}</h2>
+        <h2 className="text-2xl text-primary py-8 px-2 whitespace-pre-line">{description}</h2>
       </Modal>
     </div>
   );
