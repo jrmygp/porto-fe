@@ -71,7 +71,7 @@ function Projects() {
       id: 4,
       title: "Sandeza Bills",
       description:
-        "Prezent offers comprehensive tools for your organization to develop a loyalty program, including point generation systems, campaign administration, digital voucher distribution, and comprehensive analytical reports. Prezent is designed to be incredibly user-friendly, making it simple to use.",
+        "Currently, Sprint Asia Technology wants to provide a new Payment Point Online Bank (PPOB) service. Still, the billers available at Sprint Asia Technology are only primary billers without any backup billers. Sandeza Bills is a product that connects all billers into one single product to provide all PPOB at one.",
       image: SandezaBills,
       url: "",
       stacks: [],
