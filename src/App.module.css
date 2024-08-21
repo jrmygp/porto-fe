@@ -1,3 +1,9 @@
+:root {
+  --cursor-size: 32px;
+  --cursor-x: 0px;
+  --cursor-y: 0px;
+}
+
 .menu {
   position: fixed;
   top: 0;
@@ -8,6 +14,115 @@
   background-color: #f8f8f8;
   z-index: 20;
 }
+
 .menu.close {
   right: -100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px;
+  height: 100%;
+}
+
+.text_container {
+  width: 380px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", "sans-serif";
+  font-size: 90px;
+  font-weight: 600;
+  line-height: 70px;
+  cursor: default;
+}
+
+.layer_red {
+  background-color: rgb(235, 89, 57);
+  mask: url(/src/assets/test-mask.svg);
+  -webkit-mask: url(/src/assets/test-mask.svg);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: calc(var(--cursor-x) - var(--cursor-size) / 2) calc(var(--cursor-y) - var(--cursor-size) / 2);
+  -webkit-mask-position: calc(var(--cursor-x) - var(--cursor-size) / 2) calc(var(--cursor-y) - var(--cursor-size) / 2);
+  mask-size: var(--cursor-size);
+  -webkit-mask-size: var(--cursor-size);
+  pointer-events: none;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+
+.text_black {
+  color: black !important;
+}
+
+.circle-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transform: translate(-20%, -20%);
+}
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  min-height: 20vh;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: anim 10s linear infinite;
+}
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.text span {
+  position: absolute;
+  left: 50%;
+  font-size: 1.2em;
+  transform-origin: 0 100px;
+}
+
+.animation {
+  height: 1000px;
+}
+
+.animation_layer {
+  height: 1000px;
+}
+
+.image1 {
+  background-image: url(/src/assets/parallax/background2.jpg);
+  background-size: cover;
+}
+
+.image2 {
+  background-image: url(/src/assets/parallax/mountains.png);
+}
+
+.image3 {
+  background-image: url(/src/assets/parallax/logo_land.png);
 }

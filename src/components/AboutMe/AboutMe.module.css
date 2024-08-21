@@ -1,0 +1,15 @@
+.text_container {
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  font-family: "Montserrat", "sans-serif";
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 70px;
+  cursor: default;
+  gap: 20px;
+  text-shadow: 2px 3px 0px rgba(0, 0, 0, 1);
+}

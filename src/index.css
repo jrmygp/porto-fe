@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "sans-serif";
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,6 +19,13 @@ body {
   color: #f8f8f8;
   font-weight: 500;
   scroll-behavior: smooth;
+}
+
+button {
+  font-size: 20px;
+  color: black;
+  /* text-shadow: 1px 2px 0px rgba(255, 255, 255, 1); */
+  background-color: rgb(235, 89, 57);
 }
 
 ul {

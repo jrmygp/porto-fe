@@ -2,7 +2,7 @@
 
 import { IoReader, IoLink } from "react-icons/io5";
 
-import Button from "./Button";
+import Button from "./Button/Button";
 
 function ProjectCard({ title, description, url, image, stacks = [], onClick }) {
   return (
