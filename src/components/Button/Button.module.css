@@ -1,38 +1,61 @@
-button {
-  border-radius: 20px;
-  text-align: center;
-  padding: 50px;
-  width: 220px;
-  height: 50px;
-  transition: all 0.5s;
+.btn {
+  /* border: 1px solid rgb(235, 89, 57); */
+  background: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: "montserrat";
   cursor: pointer;
-  /* box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7); */
-}
-
-button {
-  cursor: pointer;
-  display: inline-block;
+  margin: 10px;
+  transition: 0.8s;
   position: relative;
-  transition: 0.5s;
+  overflow: hidden;
+  border-radius: 8px;
 }
-
-button:after {
-  content: "»";
+.btn1,
+.btn2 {
+  color: rgb(235, 89, 57);
+}
+.btn3,
+.btn4 {
+  color: #fff;
+}
+.btn1:hover,
+.btn2:hover {
+  color: #fff;
+}
+.btn3:hover,
+.btn4:hover {
+  color: rgb(235, 89, 57);
+}
+.btn::before {
+  content: "";
   position: absolute;
-  opacity: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: rgb(235, 89, 57);
+  z-index: -1;
+  transition: 0.8s;
+}
+.btn1::before,
+.btn3::before {
   top: 0;
-  right: -30px;
-  transition: 0.5s;
-  text-shadow: none !important;
-  font-size: 30px !important;
+  border-radius: 0 0 50% 50%;
 }
-
-button:hover {
-  padding-right: 24px;
-  padding-left: 8px;
+.btn2::before,
+.btn4::before {
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
 }
-
-button:hover:after {
-  opacity: 1;
-  right: 10px;
+.btn3::before,
+.btn4::before {
+  height: 180%;
+}
+.btn1:hover::before,
+.btn2:hover::before {
+  height: 180%;
+}
+.btn3:hover::before,
+.btn4:hover::before {
+  height: 0%;
 }

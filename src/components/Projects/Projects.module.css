@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  height: 1000px;
+}
+
+.projects {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(/src/assets/parallax/background3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 150%;
+  width: 150%;
+}
+
+.project-list {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 70px;
+  flex-wrap: wrap;
+  margin-top: 80px;
+}

@@ -11,7 +11,8 @@ import MobileMenuList from "./components/MobileMenuList";
 // import AboutMe from "./components/AboutMe";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import AboutMe from "./components/AboutMe/AboutMe";
-import Button from "./components/Button/Button";
+import { Button1, Button2, Button3, Button4 } from "./components/Button/Button";
+import Projects from "./components/Projects/Projects";
 // import Footer from "./components/Footer";
 // import AnimationWrapper from "./components/AnimationWrapper";
 
@@ -70,7 +71,7 @@ function App() {
         <MobileMenuList onClick={toggleMenu} />
       </div>
 
-      <Parallax pages={2} style={{ top: "0", left: "0" }} className={classes.animation}>
+      <Parallax pages={3} style={{ top: "0", left: "0" }} className={classes.animation}>
         <ParallaxLayer offset={0} speed={0.25}>
           <section className="h-full" style={{ backgroundImage: "url(/background-full.jpg)", backgroundSize: "cover" }}>
             <div className={classes.container}>
@@ -103,8 +104,12 @@ function App() {
 
         <ParallaxLayer offset={1.6} speed={0.25}>
           <div className="flex w-full items-center justify-center">
-            <Button title="Check My Project" />
+            <Button3 title="Check My Project" />
           </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={2} speed={2}>
+          <Projects />
         </ParallaxLayer>
       </Parallax>
 

@@ -1,43 +1,21 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useRef } from "react";
 
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 
-import { IoMdClose } from "react-icons/io";
-
-import ProjectCard from "./ProjectCard";
 import Nest from "@/assets/project/nest.png";
 import KSS from "@/assets/project/kss.png";
 import Prezent from "@/assets/project/prezent.jpg";
 import SandezaBills from "@/assets/project/sandeza-bills.jpg";
 import Healthymed from "@/assets/project/healthymed.png";
 import Konekt from "@/assets/project/konekt.png";
+import classes from "./Projects.module.css";
+import ProjectCard from "./ProjectCard/ProjectCard";
 
 function Projects() {
-  const [open, setOpen] = useState(false);
-  const [description, setDescription] = useState("");
-
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1200, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 690, min: 0 },
-      items: 1,
-    },
-  };
+  const boxRef = useRef(null);
+  const contentRef = useRef(null);
 
   const projects = [
     {
@@ -95,58 +73,39 @@ function Projects() {
     },
   ];
 
-  const openModal = (description) => {
-    setOpen(true);
-    setDescription(description);
-  };
+  useEffect(() => {
+    const box = boxRef.current;
+    const content = contentRef.current;
+    const sensitivity = 20;
 
-  const closeModal = () => {
-    setOpen(false);
-    setDescription("");
-  };
+    const addCoors = (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
 
-  const closeButton = <IoMdClose className="text-primary text-2xl" />;
+      box.style.backgroundPosition = `${x / sensitivity}px ${y / sensitivity}px`;
+    };
+
+    if (box) {
+      box.addEventListener("mousemove", addCoors);
+      content.addEventListener("mousemove", addCoors);
+    }
+  }, []);
 
   return (
-    <div className="flex flex-col gap-24">
-      <h1 className="text-6xl z-10">Projects</h1>
-      <Carousel
-        responsive={responsive}
-        draggable
-        swipeable
-        infinite
-        showDots
-        renderButtonGroupOutside
-        keyBoardControl
-        itemClass="p-[10px] pb-[40px]"
-      >
-        {projects?.length > 0 &&
-          projects.map((project) => {
-            return (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                url={project.url}
-                stacks={project.stacks}
-                onClick={openModal}
-              />
-            );
-          })}
-      </Carousel>
-
-      <Modal
-        open={open}
-        onClose={closeModal}
-        center
-        closeIcon={closeButton}
-        classNames={{
-          modal: "rounded-xl",
-        }}
-      >
-        <h2 className="text-2xl text-primary py-8 px-2 whitespace-pre-line">{description}</h2>
-      </Modal>
+    <div className={classes.container}>
+      <div ref={boxRef} className={classes.projects} />
+      <div ref={contentRef} className={classes["project-list"]}>
+        {projects.map((project) => {
+          return (
+            <ProjectCard
+              key={project.id}
+              image={project.image}
+              title={project.title}
+              description={project.description}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
