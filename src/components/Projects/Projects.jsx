@@ -74,21 +74,23 @@ function Projects() {
         <h1 className={classes.title}>MY PROJECTS</h1>
       </AnimationWrapper>
 
-      <div className={classes.container}>
-        {projects.map((project) => {
-          return (
-            <ProjectCard
-              key={project.id}
-              id={project.id}
-              image={project.image}
-              title={project.title}
-              description={project.description}
-              onClick={openCard}
-              checked={checked === project.id}
-            />
-          );
-        })}
-      </div>
+      <AnimationWrapper delay={0.75}>
+        <div className={classes.container}>
+          {projects.map((project) => {
+            return (
+              <ProjectCard
+                key={project.id}
+                id={project.id}
+                image={project.image}
+                title={project.title}
+                description={project.description}
+                onClick={openCard}
+                checked={checked === project.id}
+              />
+            );
+          })}
+        </div>
+      </AnimationWrapper>
     </div>
   );
 }

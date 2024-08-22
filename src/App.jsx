@@ -13,11 +13,13 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
 import AnimationWrapper from "./components/AnimationWrapper";
+import Footer from "./components/Footer/Footer";
 // import Footer from "./components/Footer";
 // import AnimationWrapper from "./components/AnimationWrapper";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const textRef = useRef(null);
   const parallaxRef = useRef(null);
 
@@ -58,6 +60,35 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const parallaxElement = parallaxRef.current.container.current;
+
+      // Trigger hide 300px before reaching the bottom
+      const earlyTriggerOffset = 200;
+      const scrolledToEarlyBottom =
+        parallaxElement.scrollTop + parallaxElement.clientHeight >= parallaxElement.scrollHeight - earlyTriggerOffset;
+
+      if (scrolledToEarlyBottom) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    const parallaxElement = parallaxRef.current.container.current;
+
+    if (parallaxElement) {
+      parallaxElement.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (parallaxElement) {
+        parallaxElement.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, [parallaxRef]);
+
   return (
     <div>
       <div className="hidden lg:block sticky top-0 z-50">
@@ -72,7 +103,7 @@ function App() {
         <MobileMenuList onClick={toggleMenu} />
       </div>
 
-      <Parallax ref={parallaxRef} pages={4} style={{ top: "0", left: "0" }}>
+      <Parallax ref={parallaxRef} pages={5} style={{ top: "0", left: "0" }}>
         <ParallaxLayer offset={0} speed={0.25}>
           <section className="h-full" style={{ backgroundImage: "url(/background-full.jpg)", backgroundSize: "cover" }}>
             <div className={classes.container}>
@@ -121,9 +152,17 @@ function App() {
         <ParallaxLayer offset={3} speed={0}>
           <Projects />
         </ParallaxLayer>
+
+        <ParallaxLayer offset={4} speed={1}>
+          <Footer />
+        </ParallaxLayer>
       </Parallax>
 
-      <div className={classes["circle-wrapper"]}>
+      <div
+        className={`${classes["circle-wrapper"]} transition-opacity duration-500 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div className={classes.circle}>
           <div className={classes.text}>
             <p ref={textRef}>Scroll Down To See More</p>
