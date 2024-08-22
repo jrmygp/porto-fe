@@ -106,15 +106,24 @@
   transform-origin: 0 100px;
 }
 
-.animation {
-  height: 1000px;
+.wrapper {
+  background: rgb(235, 89, 57);
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.animation_layer {
-  height: 1000px;
+.title {
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 70px;
 }
 
-.image1 {
-  background-image: url(/src/assets/parallax/background2.jpg);
-  background-size: cover;
+.arrow {
+  height: 100px;
+  width: 1px;
+  border: 1px solid white;
 }

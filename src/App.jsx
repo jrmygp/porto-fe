@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 // import Hero from "./components/Hero";
 import MobileMenuButton from "./components/MobileMenuButton";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import classes from "./App.module.css";
 import MobileMenuList from "./components/MobileMenuList";
 // import Projects from "./components/Projects";
@@ -11,14 +11,15 @@ import MobileMenuList from "./components/MobileMenuList";
 // import AboutMe from "./components/AboutMe";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import AboutMe from "./components/AboutMe/AboutMe";
-import { Button1, Button2, Button3, Button4 } from "./components/Button/Button";
 import Projects from "./components/Projects/Projects";
+import AnimationWrapper from "./components/AnimationWrapper";
 // import Footer from "./components/Footer";
 // import AnimationWrapper from "./components/AnimationWrapper";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const textRef = useRef(null);
+  const parallaxRef = useRef(null);
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -60,7 +61,7 @@ function App() {
   return (
     <div>
       <div className="hidden lg:block sticky top-0 z-50">
-        <Navbar />
+        <Navbar parallaxRef={parallaxRef} />
       </div>
 
       <div className="flex lg:hidden sticky top-10 z-50 justify-end mr-5">
@@ -71,7 +72,7 @@ function App() {
         <MobileMenuList onClick={toggleMenu} />
       </div>
 
-      <Parallax pages={3} style={{ top: "0", left: "0" }} className={classes.animation}>
+      <Parallax ref={parallaxRef} pages={4} style={{ top: "0", left: "0" }}>
         <ParallaxLayer offset={0} speed={0.25}>
           <section className="h-full" style={{ backgroundImage: "url(/background-full.jpg)", backgroundSize: "cover" }}>
             <div className={classes.container}>
@@ -94,21 +95,30 @@ function App() {
           </section>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={1} factor={3}>
-          <div className={`${classes["animation_layer"]} ${classes.image1}`} />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={1.2} speed={0.5}>
+        <ParallaxLayer offset={1} speed={0.5} factor={3}>
           <AboutMe />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.6} speed={0.25}>
-          <div className="flex w-full items-center justify-center">
-            <Button3 title="Check My Project" />
+        <ParallaxLayer offset={2} speed={0}>
+          <div className={`h-full ${classes.wrapper}`} id="projects">
+            <div className="flex flex-col items-center gap-20">
+              <AnimationWrapper delay={0.15} className="items-center">
+                <h1 className={classes.title}>WHAT I DO</h1>
+              </AnimationWrapper>
+
+              <AnimationWrapper delay={0.5} className="items-center">
+                <div className="flex flex-col items-center gap-1 opacity-55">
+                  <div className={classes.arrow} />
+                  <p>SCROLL</p>
+                  <p>TO EXPLORE</p>
+                  <div className={classes.arrow} />
+                </div>
+              </AnimationWrapper>
+            </div>
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2} speed={2}>
+        <ParallaxLayer offset={3} speed={0}>
           <Projects />
         </ParallaxLayer>
       </Parallax>

@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 import { motion, useInView, useAnimation } from "framer-motion";
 
-const AnimationWrapper = ({ children }) => {
+const AnimationWrapper = ({ children, delay, className }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: false,
@@ -26,7 +26,8 @@ const AnimationWrapper = ({ children }) => {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration: 0.5, delay: delay || 0.25 }}
+        className={`h-full flex justify-center ${className}`}
       >
         {children}
       </motion.div>

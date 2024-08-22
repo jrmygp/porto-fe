@@ -1,5 +1,3 @@
-import React from "react";
-
 function ProgressBar({ percentage }) {
   return (
     <div className="flex w-full bg-[#162950] rounded-full">

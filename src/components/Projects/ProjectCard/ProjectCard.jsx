@@ -1,18 +1,20 @@
 /* eslint-disable no-unused-vars */
-
-import { IoReader, IoLink } from "react-icons/io5";
-
 import classes from "./ProjectCard.module.css";
 
-function ProjectCard({ title, description, url, image, stacks = [], onClick }) {
+function ProjectCard({ id, title, description, url, image, stacks = [], onClick, checked }) {
   return (
-    <div className={classes.card}>
-      <img src={image} alt={title} className={classes.image} />
-      {/* <div className={classes.intro}>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </div> */}
-    </div>
+    <>
+      <input type="radio" name="slide" id={id} checked={checked} onChange={() => onClick(id)} />
+      <label htmlFor={id} className={classes.card} style={{ backgroundImage: `url(${image})` }}>
+        <div className={classes.row}>
+          <div className={classes.icon}>{id}</div>
+          <div className={classes.description}>
+            <h4>{title}</h4>
+            <p>{description}</p>
+          </div>
+        </div>
+      </label>
+    </>
   );
 }
 
