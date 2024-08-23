@@ -1,5 +1,5 @@
+import AnimatedButton from "../AnimatedButton/AnimatedButton";
 import AnimationWrapper from "../AnimationWrapper";
-import { Button3 } from "../Button/Button";
 import classes from "./AboutMe.module.css";
 
 const AboutMe = () => {
@@ -37,9 +37,9 @@ const AboutMe = () => {
           </div>
         </AnimationWrapper>
 
-        <AnimationWrapper delay={1.5}>
-          <Button3 title="Download Resume" onClick={downloadResumeHandler} />
-        </AnimationWrapper>
+        <div className="absolute top-10 right-10">
+          <AnimatedButton onClick={downloadResumeHandler} />
+        </div>
       </div>
     </div>
   );

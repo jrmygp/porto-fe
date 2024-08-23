@@ -139,13 +139,13 @@ const Footer = () => {
           ref={(el) => (eyeRefs.current[0] = el)}
           className="absolute w-20 h-30 rounded-full"
           src={eye}
-          style={{ top: "-40px", left: "800px" }}
+          style={{ top: "-40px", left: "990px" }}
         />
         <img
           ref={(el) => (eyeRefs.current[1] = el)}
           className="absolute w-20 h-30 rounded-full"
           src={eye}
-          style={{ top: "-40px", left: "650px" }}
+          style={{ top: "-40px", left: "850px" }}
         />
       </div>
     </div>

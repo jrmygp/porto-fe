@@ -38,7 +38,7 @@ function Projects() {
       title: "Prezent",
       description: "Digital voucher management app",
       image: Prezent,
-      url: "",
+      url: "https://www.prezent.id/login",
       stacks: [],
     },
     {
@@ -47,7 +47,7 @@ function Projects() {
       description:
         "Sandeza Bills is a product that connects all billers into one single product to provide all PPOB at one.",
       image: SandezaBills,
-      url: "",
+      url: "https://sandeza.id/login",
       stacks: [],
     },
     {
@@ -55,7 +55,7 @@ function Projects() {
       title: "Healthymed",
       description: "An e-commerce based platform for medicine",
       image: Healthymed,
-      url: "",
+      url: "https://github.com/purwadhikafullstack/jcwd-2002-02-fe",
       stacks: [],
     },
     {
@@ -63,7 +63,7 @@ function Projects() {
       title: "Konekt",
       description: "Social media app",
       image: Konekt,
-      url: "",
+      url: "https://github.com/jrmygp/project-next.git",
       stacks: [],
     },
   ];
@@ -82,6 +82,7 @@ function Projects() {
                 key={project.id}
                 id={project.id}
                 image={project.image}
+                url={project.url}
                 title={project.title}
                 description={project.description}
                 onClick={openCard}
