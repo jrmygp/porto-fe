@@ -7,7 +7,7 @@ export default {
         ubuntu: ["Ubuntu"],
       },
       colors: {
-        primary: "#1e2124",
+        primary: "rgb(235, 89, 57)",
         "text-primary": "#3F434A",
         "text-orange": "rgb(235, 89, 57)",
       },

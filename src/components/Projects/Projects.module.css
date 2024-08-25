@@ -18,5 +18,5 @@
   height: 400px;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: start;
+  justify-content: flex-start;
 }

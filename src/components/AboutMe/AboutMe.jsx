@@ -27,7 +27,7 @@ const AboutMe = () => {
                 A dedicated Full Stack Developer based in South Tangerang, Indonesia
               </p>
 
-              <p className="text-lg text-justify font-normal">
+              <p className="text-lg text-justify font-normal text-text-primary">
                 I am a skilled Full Stack Developer with a strong focus on front-end technologies. With 2 years of
                 experience in the industry, I have honed my expertise in modern front-end development, mastering
                 technologies like HTML, CSS, React.js, Next.js, and Redux. I also have experience in mobile app

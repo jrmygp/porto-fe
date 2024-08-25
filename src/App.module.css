@@ -107,7 +107,7 @@
 }
 
 .wrapper {
-  background: rgb(235, 89, 57);
+  background: #e7e8ea;
   border-top-left-radius: 30%;
   border-top-right-radius: 30%;
   display: flex;
@@ -120,10 +120,11 @@
   font-size: 70px;
   font-weight: 600;
   line-height: 70px;
+  color: #3f434a;
 }
 
 .arrow {
   height: 100px;
   width: 1px;
-  border: 1px solid white;
+  border: 1px solid #3f434a;
 }

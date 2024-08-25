@@ -1,21 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
-// import Hero from "./components/Hero";
 import MobileMenuButton from "./components/MobileMenuButton";
 import Navbar from "./components/Navbar/Navbar";
 import classes from "./App.module.css";
 import MobileMenuList from "./components/MobileMenuList";
-// import Projects from "./components/Projects";
-// import TechStacks from "./components/TechStacks";
-// import AdditionalTech from "./components/AdditionalTech";
-// import AboutMe from "./components/AboutMe";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import AboutMe from "./components/AboutMe/AboutMe";
-import Projects from "./components/Projects/Projects";
 import AnimationWrapper from "./components/AnimationWrapper";
 import Footer from "./components/Footer/Footer";
-// import Footer from "./components/Footer";
-// import AnimationWrapper from "./components/AnimationWrapper";
+import ProjectsV2 from "./components/ProjectsV2/ProjectsV2";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -90,7 +83,7 @@ function App() {
   }, [parallaxRef]);
 
   return (
-    <div>
+    <div className="h-full">
       <div className="hidden lg:block sticky top-0 z-50">
         <Navbar parallaxRef={parallaxRef} />
       </div>
@@ -140,8 +133,8 @@ function App() {
               <AnimationWrapper delay={0.5} className="items-center">
                 <div className="flex flex-col items-center gap-1 opacity-55">
                   <div className={classes.arrow} />
-                  <p>SCROLL</p>
-                  <p>TO EXPLORE</p>
+                  <p className="text-text-primary">SCROLL</p>
+                  <p className="text-text-primary">TO EXPLORE</p>
                   <div className={classes.arrow} />
                 </div>
               </AnimationWrapper>
@@ -150,7 +143,7 @@ function App() {
         </ParallaxLayer>
 
         <ParallaxLayer offset={3} speed={0}>
-          <Projects />
+          <ProjectsV2 />
         </ParallaxLayer>
 
         <ParallaxLayer offset={4} speed={1}>
