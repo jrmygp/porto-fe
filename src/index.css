@@ -21,12 +21,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* button {
-  font-size: 20px;
-  color: black;
-  background-color: rgb(235, 89, 57);
-} */
-
 ul {
   padding: 0px;
   margin: 0px;
@@ -53,4 +47,29 @@ p {
   -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu/Ubuntu-Light.ttf");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu/Ubuntu-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu/Ubuntu-Medium.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu/Ubuntu-Bold.ttf");
+  font-weight: 800;
+  font-style: normal;
 }

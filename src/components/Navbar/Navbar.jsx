@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-no-target-blank */
 import { memo, useEffect, useState } from "react";
 
@@ -36,9 +37,9 @@ function Navbar({ parallaxRef }) {
         scrolled ? classes["navbar-scrolled"] : ""
       }`}
     >
-      <p className="text-3xl">{`Jeremy's Portfolio`}</p>
+      <p className="text-3xl font-ubuntu">Jeremy's Portfolio</p>
 
-      <div className="flex justify-between items-center gap-20 flex-wrap">
+      <div className="flex justify-between items-center gap-20 flex-wrap font-ubuntu">
         <a className="text-3xl" href="#projects">
           Projects
         </a>
