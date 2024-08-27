@@ -53,34 +53,34 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const parallaxElement = parallaxRef.current.container.current;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const parallaxElement = parallaxRef.current.container.current;
 
-      // Trigger hide 300px before reaching the bottom
-      const earlyTriggerOffset = 200;
-      const scrolledToEarlyBottom =
-        parallaxElement.scrollTop + parallaxElement.clientHeight >= parallaxElement.scrollHeight - earlyTriggerOffset;
+  //     // Trigger hide 300px before reaching the bottom
+  //     const earlyTriggerOffset = 200;
+  //     const scrolledToEarlyBottom =
+  //       parallaxElement.scrollTop + parallaxElement.clientHeight >= parallaxElement.scrollHeight - earlyTriggerOffset;
 
-      if (scrolledToEarlyBottom) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-    };
+  //     if (scrolledToEarlyBottom) {
+  //       setIsVisible(false);
+  //     } else {
+  //       setIsVisible(true);
+  //     }
+  //   };
 
-    const parallaxElement = parallaxRef.current.container.current;
+  //   const parallaxElement = parallaxRef.current.container.current;
 
-    if (parallaxElement) {
-      parallaxElement.addEventListener("scroll", handleScroll);
-    }
+  //   if (parallaxElement) {
+  //     parallaxElement.addEventListener("scroll", handleScroll);
+  //   }
 
-    return () => {
-      if (parallaxElement) {
-        parallaxElement.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, [parallaxRef]);
+  //   return () => {
+  //     if (parallaxElement) {
+  //       parallaxElement.removeEventListener("scroll", handleScroll);
+  //     }
+  //   };
+  // }, [parallaxRef]);
 
   return (
     <div className="h-full">
@@ -96,12 +96,16 @@ function App() {
         <MobileMenuList onClick={toggleMenu} />
       </div>
 
-      <Parallax ref={parallaxRef} pages={5} style={{ top: "0", left: "0" }}>
-        <ParallaxLayer offset={0} speed={0.25}>
+      <Parallax ref={parallaxRef} pages={4} style={{ top: "0", left: "0" }}>
+        <ParallaxLayer offset={0} speed={0}>
           <section className="h-full" style={{ backgroundImage: "url(/background-full.jpg)", backgroundSize: "cover" }}>
             <div className={classes.container}>
               <div className={`${classes["layer"]} ${classes["dark_layer"]}`}>
-                <div className={classes["text_container"]} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                <div
+                  className={`text-6xl lg:text-8xl ${classes["text_container"]}`}
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
+                >
                   <div>JEREMY</div>
                   <div>GERALD</div>
                   <div>PUGLISI</div>
@@ -109,7 +113,7 @@ function App() {
               </div>
 
               <div className={`${classes["layer"]} ${classes["layer_red"]}`}>
-                <div className={`${classes["text_container"]} ${classes["text_black"]}`}>
+                <div className={`${`text-6xl lg:text-8xl ${classes["text_container"]}`} ${classes["text_black"]}`}>
                   <div>SOFTWARE</div>
                   <div>ENGINEER</div>
                   <div>DEVELOPER</div>
@@ -119,15 +123,17 @@ function App() {
           </section>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={0.5} factor={3}>
-          <AboutMe />
+        <ParallaxLayer offset={1} speed={1}>
+          <div>
+            <AboutMe />
+          </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2} speed={0}>
-          <div className={`h-full ${classes.wrapper}`} id="projects">
-            <div className="flex flex-col items-center gap-20">
+        <ParallaxLayer offset={2} speed={0.5}>
+          <div id="projects">
+            <div className="rounded-3xl bg-[#e7e8ea] flex flex-col justify-center items-center gap-20 py-20 px-2 lg:px-[400px]">
               <AnimationWrapper delay={0.15} className="items-center">
-                <h1 className={classes.title}>WHAT I DO</h1>
+                <h1 className="text-5xl lg:text-8xl text-center text-text-primary font-bold">WHAT I DO</h1>
               </AnimationWrapper>
 
               <AnimationWrapper delay={0.5} className="items-center">
@@ -138,15 +144,15 @@ function App() {
                   <div className={classes.arrow} />
                 </div>
               </AnimationWrapper>
+
+              <AnimationWrapper delay={0.75}>
+                <ProjectsV2 />
+              </AnimationWrapper>
             </div>
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3} speed={0}>
-          <ProjectsV2 />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={4} speed={1}>
+        <ParallaxLayer offset={3} speed={1}>
           <Footer />
         </ParallaxLayer>
       </Parallax>

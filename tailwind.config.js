@@ -11,6 +11,11 @@ export default {
         "text-primary": "#3F434A",
         "text-orange": "rgb(235, 89, 57)",
       },
+      screens: {
+        sm: "310px",
+        md: "877px",
+        lg: "1440px",
+      },
     },
   },
   plugins: [],

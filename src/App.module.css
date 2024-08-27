@@ -44,7 +44,6 @@
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", "sans-serif";
-  font-size: 90px;
   font-weight: 600;
   line-height: 70px;
   cursor: default;
@@ -105,24 +104,6 @@
   font-size: 1.2em;
   transform-origin: 0 100px;
 }
-
-.wrapper {
-  background: #e7e8ea;
-  border-top-left-radius: 30%;
-  border-top-right-radius: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  font-size: 70px;
-  font-weight: 600;
-  line-height: 70px;
-  color: #3f434a;
-}
-
 .arrow {
   height: 100px;
   width: 1px;

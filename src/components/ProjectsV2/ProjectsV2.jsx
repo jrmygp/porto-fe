@@ -91,13 +91,7 @@ const ProjectsV2 = () => {
   ];
 
   return (
-    <div
-      className={`${classes.container} flex flex-col gap-48 bg-[#e7e8ea] pb-72 px-[400px] max-h-[1000px] overflow-y-auto`}
-      style={{
-        borderBottomLeftRadius: "30%",
-        borderBottomRightRadius: "30%",
-      }}
-    >
+    <div className={`${classes.container} flex flex-col gap-48 h-[400px] overflow-y-auto`}>
       {projects.map((project) => {
         return (
           <ProjectCardV2
