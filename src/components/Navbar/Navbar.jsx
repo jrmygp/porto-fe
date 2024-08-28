@@ -4,38 +4,34 @@ import { memo, useEffect, useState } from "react";
 
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io";
 
-import classes from "./Navbar.module.css";
-
 function Navbar({ parallaxRef }) {
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = parallaxRef.current.container.current.scrollTop;
-      if (scrollY > 200) {
-        setScrolled(true); // Add the class
-      } else {
-        setScrolled(false); // Remove the class
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollY = parallaxRef.current.container.current.scrollTop;
+  //     if (scrollY > 200) {
+  //       setScrolled(true); // Add the class
+  //     } else {
+  //       setScrolled(false); // Remove the class
+  //     }
+  //   };
 
-    const parallaxElement = parallaxRef.current.container.current;
+  //   const parallaxElement = parallaxRef.current.container.current;
 
-    if (parallaxElement) {
-      parallaxElement.addEventListener("scroll", handleScroll);
+  //   if (parallaxElement) {
+  //     parallaxElement.addEventListener("scroll", handleScroll);
 
-      // Cleanup
-      return () => {
-        parallaxElement.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [parallaxRef]);
+  //     // Cleanup
+  //     return () => {
+  //       parallaxElement.removeEventListener("scroll", handleScroll);
+  //     };
+  //   }
+  // }, [parallaxRef]);
 
   return (
     <nav
-      className={`flex justify-center sm:justify-between items-center w-full px-20 py-4 flex-wrap gap-10 transition-all duration-500 ${
-        scrolled ? classes["navbar-scrolled"] : ""
-      }`}
+      className={`flex justify-center sm:justify-between items-center w-full px-20 py-4 flex-wrap gap-10 transition-all duration-500 bg-[#1e2124]`}
     >
       <p className="text-3xl font-ubuntu">Jeremy's Portfolio</p>
 

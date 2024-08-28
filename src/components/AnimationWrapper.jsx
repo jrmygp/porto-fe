@@ -27,7 +27,7 @@ const AnimationWrapper = ({ children, delay, className }) => {
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 0.5, delay: delay || 0.25 }}
-        className={`h-full flex justify-center ${className}`}
+        className={`h-full flex ${className}`}
       >
         {children}
       </motion.div>
