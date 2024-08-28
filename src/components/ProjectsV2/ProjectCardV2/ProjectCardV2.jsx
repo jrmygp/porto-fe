@@ -1,52 +1,30 @@
-import AnimationWrapper from "@/components/AnimationWrapper";
-import { IoMdOpen } from "react-icons/io";
-
-const ProjectCardV2 = ({ id, image, title, description, stacks, url }) => {
+const ProjectCardV2 = ({ image, title, description, stacks, url }) => {
   return (
-    <AnimationWrapper delay={0.25}>
-      <div className={`flex flex-wrap gap-6 ${id % 2 == 0 ? "flex-row-reverse" : "flex-row"}`}>
-        <img alt="project-img" src={image} className="w-[450px] rounded-lg object-cover" />
+    <a
+      className="flex flex-col flex-wrap gap-6 w-[350px] group cursor-pointer h-[500px]"
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div className="overflow-hidden">
+        <img
+          alt="project-img"
+          src={image}
+          className="h-[300px] object-contain transform transition-transform duration-700 ease-in-out group-hover:scale-125"
+        />
+      </div>
 
-        <div className="flex flex-col gap-2 w-full">
-          <p
-            className={`font-bold font-ubuntu text-2xl text-primary text-center ${
-              id % 2 == 0 ? "md:text-right" : "md:text-left"
-            }`}
-          >
-            {title}
-          </p>
-          <p
-            className={`text-lg font-ubuntu font-bold text-text-primary text-center ${
-              id % 2 == 0 ? "md:text-right" : "md:text-left"
-            }`}
-          >
-            {description}
-          </p>
+      <div className="flex flex-col gap-2">
+        <p className="font-ubuntu text-2xl text-left uppercase">{title}</p>
+        <p className="text-sm font-ubuntu text-left opacity-55 uppercase">{description}</p>
 
-          <div
-            className={`flex items-center gap-2 mt-10 justify-center ${
-              id % 2 == 0 ? "md:justify-end" : "md:justify-start"
-            }`}
-          >
-            {stacks.map((stack, idx) => (
-              <img key={idx} alt={`${stack.img}-img`} src={stack.img} className="h-8 w-8 object-contain rounded-lg" />
-            ))}
-          </div>
-
-          <a
-            className={`flex items-center gap-2 cursor-pointer mt-2 justify-center ${
-              id % 2 == 0 ? "md:justify-end" : "md:justify-start"
-            }`}
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IoMdOpen size={28} className="text-text-primary" />
-            <p className="font-semibold font-ubuntu text-text-primary text-lg">Live</p>
-          </a>
+        <div className="flex items-center gap-2 mt-10 justify-start">
+          {stacks.map((stack, idx) => (
+            <img key={idx} alt={`${stack.img}-img`} src={stack.img} className="h-8 w-8 object-contain rounded-lg" />
+          ))}
         </div>
       </div>
-    </AnimationWrapper>
+    </a>
   );
 };
 

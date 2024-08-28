@@ -37,7 +37,6 @@
 }
 
 .text_container {
-  width: 380px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -103,9 +102,4 @@
   left: 50%;
   font-size: 1.2em;
   transform-origin: 0 100px;
-}
-.arrow {
-  height: 100px;
-  width: 1px;
-  border: 1px solid #3f434a;
 }

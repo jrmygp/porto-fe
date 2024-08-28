@@ -4,17 +4,16 @@ import MobileMenuButton from "./components/MobileMenuButton";
 import Navbar from "./components/Navbar/Navbar";
 import classes from "./App.module.css";
 import MobileMenuList from "./components/MobileMenuList";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import AboutMe from "./components/AboutMe/AboutMe";
 import AnimationWrapper from "./components/AnimationWrapper";
 import Footer from "./components/Footer/Footer";
 import ProjectsV2 from "./components/ProjectsV2/ProjectsV2";
-import Background from "./assets/texture1.gif";
 
 function App() {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+  const indicatorRef = useRef(null);
   const textRef = useRef(null);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [isNearBottom, setIsNearBottom] = useState(false);
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -53,34 +52,29 @@ function App() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const parallaxElement = parallaxRef.current.container.current;
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = document.documentElement.scrollTop;
+      const clientHeight = window.innerHeight;
 
-  //     // Trigger hide 300px before reaching the bottom
-  //     const earlyTriggerOffset = 200;
-  //     const scrolledToEarlyBottom =
-  //       parallaxElement.scrollTop + parallaxElement.clientHeight >= parallaxElement.scrollHeight - earlyTriggerOffset;
+      // Calculate the distance from the bottom
+      const distanceFromBottom = scrollHeight - (scrollTop + clientHeight);
 
-  //     if (scrolledToEarlyBottom) {
-  //       setIsVisible(false);
-  //     } else {
-  //       setIsVisible(true);
-  //     }
-  //   };
+      // Set isNearBottom to true if the distance is less than or equal to 500px
+      if (distanceFromBottom <= 500) {
+        setIsNearBottom(true);
+      } else {
+        setIsNearBottom(false);
+      }
+    };
 
-  //   const parallaxElement = parallaxRef.current.container.current;
+    window.addEventListener("scroll", handleScroll);
 
-  //   if (parallaxElement) {
-  //     parallaxElement.addEventListener("scroll", handleScroll);
-  //   }
-
-  //   return () => {
-  //     if (parallaxElement) {
-  //       parallaxElement.removeEventListener("scroll", handleScroll);
-  //     }
-  //   };
-  // }, [parallaxRef]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="flex flex-col gap-20">
@@ -88,7 +82,7 @@ function App() {
         <Navbar />
       </div>
 
-      <div className="flex lg:hidden sticky top-10 z-50 justify-end mr-5">
+      <div className="flex lg:hidden fixed top-10 right-0 z-50 justify-end mr-5">
         <MobileMenuButton toggle={toggleMenu} isOpen={menuIsOpen} />
       </div>
 
@@ -100,7 +94,7 @@ function App() {
         <div className={classes.container}>
           <div className={`${classes["layer"]} ${classes["dark_layer"]}`}>
             <div
-              className={`text-6xl lg:text-8xl ${classes["text_container"]}`}
+              className={`text-5xl md:text-8xl ${classes["text_container"]}`}
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
             >
@@ -111,7 +105,7 @@ function App() {
           </div>
 
           <div className={`${classes["layer"]} ${classes["layer_red"]}`}>
-            <div className={`${`text-6xl lg:text-8xl ${classes["text_container"]}`} ${classes["text_black"]}`}>
+            <div className={`${`text-5xl md:text-8xl ${classes["text_container"]}`} ${classes["text_black"]}`}>
               <div>SOFTWARE</div>
               <div>ENGINEER</div>
               <div>DEVELOPER</div>
@@ -120,17 +114,75 @@ function App() {
         </div>
       </section>
 
-      <section className="h-screen relative border flex items-center">
-        <div className="absolute top-20 right-20 w-[500px] h-[500px] rounded-full bg-white filter blur-3xl opacity-10 animate-blob" />
+      <section className="h-screen relative flex items-center" id="about-me">
+        <div className="absolute top-20 right-20 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-white filter blur-3xl opacity-10 animate-blob" />
         <AboutMe />
-        {/* <div className="absolute top-10 left-40 w-72 h-72 rounded-full bg-yellow-300 mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-20 w-72 h-72 rounded-full bg-pink-300 mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div> */}
+      </section>
+
+      <section className="h-[700px] md:h-[500px] relative" id="technologies">
+        <div className="absolute top-10 left-40 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-yellow-300  filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 left-20 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-pink-300  filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+
+        <div className="flex flex-col gap-10 px-2 md:px-[100px] lg:px-[400px] font-ubuntu">
+          <AnimationWrapper delay={1}>
+            <p className="opacity-80">TECH STACKS & SKILLS</p>
+          </AnimationWrapper>
+
+          <AnimationWrapper delay={1.5}>
+            <div className="flex items-center gap-5 flex-wrap">
+              <p className="text-5xl">React.JS</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Next.JS</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">React Native</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Golang</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Node.JS</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Express</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Gin & GORM</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Sequelize</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">MySQL</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Redux</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">AWS</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Docker</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Firebase</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">Expo</p>
+              <div className="bg-white rounded-full h-2 w-2" />
+              <p className="text-5xl">HTML & CSS</p>
+            </div>
+          </AnimationWrapper>
+        </div>
+      </section>
+
+      <section className="h-screen relative" id="projects">
+        <div className="absolute top-40 right-20 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-pink-300 filter blur-3xl mix-blend-luminosity opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 right-80 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-blue-300 filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+
+        <ProjectsV2 />
+      </section>
+
+      <section className="h-[500px] relative">
+        <div className="absolute left-32 right-0 ml-auto mr-auto w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-green-300 filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute -left-32 right-0 ml-auto mr-auto w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-red-300 filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+
+        <Footer />
       </section>
 
       <div
-        className={`${classes["circle-wrapper"]} transition-opacity duration-500 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
+        ref={indicatorRef}
+        className={`${classes["circle-wrapper"]} ${
+          isNearBottom ? "opacity-0" : "opacity-100"
+        } transition-opacity duration-500`}
       >
         <div className={classes.circle}>
           <div className={classes.text}>

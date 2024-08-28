@@ -4,8 +4,6 @@ import { memo, useEffect, useState } from "react";
 
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io";
 
-import classes from "./Navbar.module.css";
-
 function Navbar({ parallaxRef }) {
   const [scrolled, setScrolled] = useState(false);
 
