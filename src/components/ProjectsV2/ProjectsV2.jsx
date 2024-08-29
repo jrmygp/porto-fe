@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { MdArrowForward } from "react-icons/md";
+import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 import ProjectCardV2 from "./ProjectCardV2/ProjectCardV2";
 import Nest from "@/assets/project/nest.png";
@@ -30,6 +31,8 @@ import gin from "@/assets/gin.png";
 import AnimationWrapper from "../AnimationWrapper";
 
 const ProjectsV2 = () => {
+  const [isActive, setIsActive] = useState(true);
+
   const projects = [
     {
       id: 1,
@@ -104,14 +107,23 @@ const ProjectsV2 = () => {
         <div className="w-full flex items-center justify-between">
           <p className="opacity-80">FEATURED PROJECTS</p>
           <div className="flex items-center gap-2">
+            <MdArrowBack
+              size={16}
+              className={`mb-0 ${isActive ? "opacity-0" : "opacity-100"} transition-all duration-300`}
+            />
             <p>SLIDE TO SEE MORE</p>
-            <MdArrowForward size={16} className="mb-0.5" />
+            <MdArrowForward
+              size={16}
+              className={`mb-0.5 ${isActive ? "opacity-100" : "opacity-0"} transition-all duration-300`}
+            />
           </div>
         </div>
       </AnimationWrapper>
 
       <AnimationWrapper delay={1.25}>
         <Swiper
+          onReachBeginning={() => setIsActive(true)}
+          onReachEnd={() => setIsActive(false)}
           pagination={{
             dynamicBullets: true,
           }}

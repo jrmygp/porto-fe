@@ -115,13 +115,13 @@ function App() {
       </section>
 
       <section className="h-screen relative flex items-center" id="about-me">
-        <div className="absolute top-20 right-20 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-white filter blur-3xl opacity-10 animate-blob" />
+        <div className="absolute top-20 right-20 w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-white filter blur-3xl opacity-10 animate-blob" />
         <AboutMe />
       </section>
 
       <section className="h-[700px] md:h-[500px] relative" id="technologies">
-        <div className="absolute top-10 left-40 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-yellow-300  filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-20 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-pink-300  filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-10 left-40 w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-yellow-300  filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 left-20 w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-pink-300  filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
 
         <div className="flex flex-col gap-10 px-2 md:px-[100px] lg:px-[400px] font-ubuntu">
           <AnimationWrapper delay={1}>
@@ -165,15 +165,15 @@ function App() {
       </section>
 
       <section className="h-screen relative" id="projects">
-        <div className="absolute top-40 right-20 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-pink-300 filter blur-3xl mix-blend-luminosity opacity-10 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 right-80 w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-blue-300 filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-40 right-20 w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-pink-200 filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 right-80 w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-blue-400 filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
 
         <ProjectsV2 />
       </section>
 
       <section className="h-[500px] relative">
-        <div className="absolute left-32 right-0 ml-auto mr-auto w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-green-300 filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-        <div className="absolute -left-32 right-0 ml-auto mr-auto w-40 h-40 md:w-[500px] md:h-[500px] rounded-full bg-red-300 filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+        <div className="absolute left-32 right-0 ml-auto mr-auto w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-green-300 filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute -left-32 right-0 ml-auto mr-auto w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-red-300 filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
 
         <Footer />
       </section>
