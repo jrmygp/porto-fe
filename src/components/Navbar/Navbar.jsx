@@ -36,14 +36,17 @@ function Navbar({ parallaxRef }) {
       <p className="text-3xl font-ubuntu">Jeremy's Portfolio</p>
 
       <div className="flex justify-between items-center gap-20 flex-wrap font-ubuntu">
-        <a className="text-3xl" href="#projects">
-          Projects
+        <a className="text-xl text-center" href="#about-me">
+          About me
         </a>
-        <a className="text-3xl" href="#technologies">
+        <a className="text-xl" href="#technologies">
           Technologies
         </a>
-        <a className="text-3xl text-center" href="#about-me">
-          About me
+        <a className="text-xl" href="#experiences">
+          Experiences
+        </a>
+        <a className="text-xl" href="#projects">
+          Projects
         </a>
       </div>
 
