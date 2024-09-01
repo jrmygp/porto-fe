@@ -8,6 +8,7 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import AnimationWrapper from "./components/AnimationWrapper";
 import Footer from "./components/Footer/Footer";
 import ProjectsV2 from "./components/ProjectsV2/ProjectsV2";
+import Experience from "./components/Experience";
 
 function App() {
   const indicatorRef = useRef(null);
@@ -114,9 +115,15 @@ function App() {
         </div>
       </section>
 
-      <section className="h-screen relative flex items-center" id="about-me">
+      <section className="h-screen md:h-[500px] relative flex items-center" id="about-me">
         <div className="absolute top-20 right-20 w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-white filter blur-3xl opacity-10 animate-blob" />
         <AboutMe />
+      </section>
+
+      <section className="h-screen relative flex items-center" id="experiences">
+        <div className="absolute right-20 md:right-[500px] w-52 h-52 md:w-[200px] md:h-[200px] rounded-full bg-yellow-300 filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute right-14 md:right-[400px] w-52 h-52 md:w-[200px] md:h-[200px] rounded-full bg-green-300 filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+        <Experience />
       </section>
 
       <section className="h-[700px] md:h-[500px] relative" id="technologies">
