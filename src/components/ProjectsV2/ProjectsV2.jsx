@@ -12,6 +12,7 @@ import Prezent from "@/assets/project/prezent.jpg";
 import SandezaBills from "@/assets/project/sandeza-bills.jpg";
 import Healthymed from "@/assets/project/healthymed.png";
 import Konekt from "@/assets/project/konekt.png";
+import Radix from "@/assets/project/radix.png";
 
 import React from "@/assets/react.png";
 import Next from "@/assets/nextjs.png";
@@ -69,6 +70,14 @@ const ProjectsV2 = () => {
     },
     {
       id: 5,
+      title: "Radix Dashboard App",
+      description: "Dashboard app to track quotation, invoicement, and shipment for freight forwarders company.",
+      image: Radix,
+      url: "http://54.227.49.219:4173/",
+      stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
+    },
+    {
+      id: 6,
       title: "Healthymed",
       description: "An e-commerce based platform for medicine",
       image: Healthymed,
@@ -84,7 +93,7 @@ const ProjectsV2 = () => {
       ],
     },
     {
-      id: 6,
+      id: 7,
       title: "Konekt",
       description: "Social media app",
       image: Konekt,
@@ -102,7 +111,7 @@ const ProjectsV2 = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-10 px-2 md:px-[100px] lg:px-[400px] font-ubuntu">
+    <div className="flex flex-col gap-10 px-2 md:px-[100px] lg:px-[300px] font-ubuntu">
       <AnimationWrapper delay={1}>
         <div className="w-full flex items-center justify-between">
           <p className="opacity-80">FEATURED PROJECTS</p>
@@ -136,6 +145,7 @@ const ProjectsV2 = () => {
             },
           }}
           modules={[Pagination]}
+          spaceBetween={100}
           className="w-full"
         >
           {projects.map((project) => {
