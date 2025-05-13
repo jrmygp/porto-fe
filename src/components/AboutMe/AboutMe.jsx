@@ -13,8 +13,8 @@ const AboutMe = () => {
 
           <AnimationWrapper delay={1.25}>
             <p className="text-lg text-justify font-normal opacity-70">
-              I am a skilled Full Stack Developer with a strong focus on front-end technologies. With 2 years of
-              experience in the industry, I have honed my expertise in modern front-end development, mastering
+              I am a skilled Full Stack Developer with a strong focus on front-end technologies. With more than 2 years
+              of experience in the industry, I have honed my expertise in modern front-end development, mastering
               technologies like HTML, CSS, React.js, Next.js, and Redux. I also have experience in mobile app
               development using React Native and Expo.
               <br />
