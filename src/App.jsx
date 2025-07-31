@@ -43,8 +43,9 @@ function App() {
 
   useEffect(() => {
     const text = textRef.current;
+    const content = text?.dataset.text ?? "";
     if (text) {
-      text.innerHTML = text?.innerText
+      text.innerHTML = content
         .split("")
         .map((char, i) => {
           return `<span style="transform:rotate(${i * 8.3}deg)">${char}</span>`;
@@ -193,7 +194,7 @@ function App() {
       >
         <div className={classes.circle}>
           <div className={classes.text}>
-            <p ref={textRef}>Scroll Down To See More</p>
+            <p ref={textRef} data-text="Scroll Down To See More"></p>
           </div>
         </div>
       </div>
