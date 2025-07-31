@@ -101,6 +101,7 @@
 .text span {
   position: absolute;
   left: 50%;
+  top: 0;
   font-size: 1.2em;
-  transform-origin: 0 100px;
+  transform-origin: 0 100px; /* adjust 100px to be your circle radius */
 }

@@ -43,12 +43,14 @@ function App() {
 
   useEffect(() => {
     const text = textRef.current;
-    const content = text?.dataset.text ?? "";
+    const content = "Scroll Down To See More";
     if (text) {
-      text.innerHTML = content
-        .split("")
+      const chars = content.split("");
+      const degree = 360 / chars.length;
+
+      text.innerHTML = chars
         .map((char, i) => {
-          return `<span style="transform:rotate(${i * 8.3}deg)">${char}</span>`;
+          return `<span style="transform: rotate(${i * degree}deg)">${char}</span>`;
         })
         .join("");
     }
