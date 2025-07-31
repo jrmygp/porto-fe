@@ -9,8 +9,9 @@ const Footer = () => {
   const downloadResumeHandler = () => {
     const a = document.createElement("a");
     a.style.display = "none";
-    a.href = `http://${window.location.hostname}/src/assets/resume.pdf`;
-    a.download = "resume jeremy gerald puglisi";
+    a.href = `${window.location.origin}/resume.pdf`;
+    a.download = "resume jeremy gerald puglisi.pdf";
+    document.body.appendChild(a);
     a.click();
     a.remove();
   };
