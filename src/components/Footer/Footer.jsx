@@ -9,7 +9,7 @@ const Footer = () => {
   const downloadResumeHandler = () => {
     const a = document.createElement("a");
     a.style.display = "none";
-    a.href = "http://localhost:5173/src/assets/resume.pdf";
+    a.href = `http://${window.location.hostname}/src/assets/resume.pdf`;
     a.download = "resume jeremy gerald puglisi";
     a.click();
     a.remove();
