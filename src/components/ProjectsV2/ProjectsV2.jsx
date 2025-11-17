@@ -13,6 +13,7 @@ import SandezaBills from "@/assets/project/sandeza-bills.jpg";
 import Healthymed from "@/assets/project/healthymed.png";
 import Konekt from "@/assets/project/konekt.png";
 import Radix from "@/assets/project/radix.png";
+import ScentLab from "@/assets/project/scentlab.png";
 
 import React from "@/assets/react.png";
 import Next from "@/assets/nextjs.png";
@@ -28,15 +29,20 @@ import mysql from "@/assets/mysql.png";
 import chakra from "@/assets/chakra.png";
 import golang from "@/assets/go.png";
 import gin from "@/assets/gin.png";
+import firebase from "@/assets/firebase.png";
 
 import AnimationWrapper from "../AnimationWrapper";
 
 const ProjectsV2 = () => {
   const [isActive, setIsActive] = useState(true);
 
+  const randomId = () => {
+    return Math.random().toString(36).substring(2) + Date.now().toString(36);
+  };
+
   const projects = [
     {
-      id: 1,
+      id: randomId(),
       title: "Kolabora Smart System",
       description: "Multi function productivity app",
       image: KSS,
@@ -44,7 +50,7 @@ const ProjectsV2 = () => {
       stacks: [{ img: React }, { img: Next }, { img: redux }, { img: mui }, { img: css }],
     },
     {
-      id: 2,
+      id: randomId(),
       title: "KSS Nest",
       description: "Mobile app version of Kolabora Smart System",
       image: Nest,
@@ -52,7 +58,7 @@ const ProjectsV2 = () => {
       stacks: [{ img: reactNative }, { img: expo }, { img: redux }],
     },
     {
-      id: 3,
+      id: randomId(),
       title: "Prezent",
       description: "Digital voucher management app",
       image: Prezent,
@@ -60,7 +66,7 @@ const ProjectsV2 = () => {
       stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
     },
     {
-      id: 4,
+      id: randomId(),
       title: "Sandeza Bills",
       description:
         "Sandeza Bills is a product that connects all billers into one single product to provide all PPOB at one.",
@@ -69,7 +75,7 @@ const ProjectsV2 = () => {
       stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
     },
     {
-      id: 5,
+      id: randomId(),
       title: "Radix Dashboard App",
       description: "Dashboard app to track quotation, invoicement, and shipment for freight forwarders company.",
       image: Radix,
@@ -77,7 +83,15 @@ const ProjectsV2 = () => {
       stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
     },
     {
-      id: 6,
+      id: randomId(),
+      title: "The Scent Lab",
+      description: "Scent personality generator based on quiz",
+      image: ScentLab,
+      url: "https://thescentlab.id/",
+      stacks: [{ img: React }, { img: mui }, { img: firebase }],
+    },
+    {
+      id: randomId(),
       title: "Healthymed",
       description: "An e-commerce based platform for medicine",
       image: Healthymed,
@@ -93,7 +107,7 @@ const ProjectsV2 = () => {
       ],
     },
     {
-      id: 7,
+      id: randomId(),
       title: "Konekt",
       description: "Social media app",
       image: Konekt,
