@@ -43,7 +43,7 @@ function App() {
 
   useEffect(() => {
     const text = textRef.current;
-    const content = "Scroll Down To See More";
+    const content = "Scroll Down To See More!";
     if (text) {
       const chars = content.split("");
       const degree = 360 / chars.length;
@@ -196,7 +196,7 @@ function App() {
       >
         <div className={classes.circle}>
           <div className={classes.text}>
-            <p ref={textRef} data-text="Scroll Down To See More"></p>
+            <p ref={textRef} data-text="Scroll Down To See More!"></p>
           </div>
         </div>
       </div>
