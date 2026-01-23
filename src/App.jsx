@@ -43,7 +43,7 @@ function App() {
 
   useEffect(() => {
     const text = textRef.current;
-    const content = "Scroll Down To See More!";
+    const content = "Scroll Down To See More";
     if (text) {
       const chars = content.split("");
       const degree = 360 / chars.length;
