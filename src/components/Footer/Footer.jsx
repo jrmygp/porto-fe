@@ -76,10 +76,10 @@ const Footer = () => {
             <p className="text-lg opacity-90">jeremy.puglisi17@gmail.com</p>
           </AnimationWrapper>
 
-          <AnimationWrapper delay={3.5} className="flex items-center gap-2">
+          {/* <AnimationWrapper delay={3.5} className="flex items-center gap-2">
             <FaWhatsapp size={20} />
             <p className="text-lg opacity-90">+62 857 1543 1049</p>
-          </AnimationWrapper>
+          </AnimationWrapper> */}
         </div>
       </div>
 

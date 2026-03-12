@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -8,8 +8,8 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 import ProjectCardV2 from "./ProjectCardV2/ProjectCardV2";
 import Nest from "@/assets/project/nest.png";
 import KSS from "@/assets/project/kss.png";
-import Prezent from "@/assets/project/prezent.jpg";
-import SandezaBills from "@/assets/project/sandeza-bills.jpg";
+import Prezent from "@/assets/project/prezent.png";
+import PWA from "@/assets/project/pwa.png";
 import Healthymed from "@/assets/project/healthymed.png";
 import Konekt from "@/assets/project/konekt.png";
 import Radix from "@/assets/project/radix.png";
@@ -34,7 +34,9 @@ import firebase from "@/assets/firebase.png";
 import AnimationWrapper from "../AnimationWrapper";
 
 const ProjectsV2 = () => {
-  const [isActive, setIsActive] = useState(true);
+  const swiperRef = useRef(null);
+  const [isAtBeginning, setIsAtBeginning] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
 
   const randomId = () => {
     return Math.random().toString(36).substring(2) + Date.now().toString(36);
@@ -43,10 +45,27 @@ const ProjectsV2 = () => {
   const projects = [
     {
       id: randomId(),
+      title: "Prezent Loyalty",
+      description: "Admin dashboard for Sandeza's digital campaign product",
+      image: Prezent,
+      url: "https://sandeza.id/prezent/campaign",
+      stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
+    },
+    {
+      id: randomId(),
+      title: "Prezent Loyalty PWA",
+      description:
+        "Application for users to participate in Sandeza's digital campaign and redeem their points to get rewards from the campaign",
+      image: PWA,
+      url: "https://my-prezent.sandeza.id/sprint_asia/login/whatsapp",
+      stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
+    },
+    {
+      id: randomId(),
       title: "Kolabora Smart System",
       description: "Multi function productivity app",
       image: KSS,
-      url: "https://kolabora.ksshub.com/",
+      url: "",
       stacks: [{ img: React }, { img: Next }, { img: redux }, { img: mui }, { img: css }],
     },
     {
@@ -56,23 +75,6 @@ const ProjectsV2 = () => {
       image: Nest,
       url: "https://play.google.com/store/apps/details?id=com.kolabora.kssmobileapp&hl=id",
       stacks: [{ img: reactNative }, { img: expo }, { img: redux }],
-    },
-    {
-      id: randomId(),
-      title: "Prezent",
-      description: "Digital voucher management app",
-      image: Prezent,
-      url: "https://www.prezent.id/login",
-      stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
-    },
-    {
-      id: randomId(),
-      title: "Sandeza Bills",
-      description:
-        "Sandeza Bills is a product that connects all billers into one single product to provide all PPOB at one.",
-      image: SandezaBills,
-      url: "https://sandeza.id/login",
-      stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
     },
     {
       id: randomId(),
@@ -124,42 +126,68 @@ const ProjectsV2 = () => {
     },
   ];
 
+  const handleSlideChange = (swiper) => {
+    setIsAtBeginning(swiper.isBeginning);
+    setIsAtEnd(swiper.isEnd);
+  };
+
   return (
-    <div className="flex flex-col gap-10 px-2 md:px-[100px] lg:px-[300px] font-ubuntu">
+    <div className="flex flex-col gap-10 px-4 md:px-12 lg:px-16 xl:px-24 2xl:px-[300px] font-ubuntu">
       <AnimationWrapper delay={1}>
-        <div className="w-full flex items-center justify-between">
+        <div className="w-full flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="opacity-80">FEATURED PROJECTS</p>
-          <div className="flex items-center gap-2">
-            <MdArrowBack
-              size={16}
-              className={`mb-0 ${isActive ? "opacity-0" : "opacity-100"} transition-all duration-300`}
-            />
-            <p>SLIDE TO SEE MORE</p>
-            <MdArrowForward
-              size={16}
-              className={`mb-0.5 ${isActive ? "opacity-100" : "opacity-0"} transition-all duration-300`}
-            />
+          <div className="flex items-center gap-3 self-end md:self-auto">
+            <button
+              type="button"
+              aria-label="Show previous project"
+              onClick={() => swiperRef.current?.slidePrev()}
+              disabled={isAtBeginning}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30"
+            >
+              <MdArrowBack size={18} />
+            </button>
+            <p className="text-center">SLIDE TO SEE MORE</p>
+            <button
+              type="button"
+              aria-label="Show next project"
+              onClick={() => swiperRef.current?.slideNext()}
+              disabled={isAtEnd}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30"
+            >
+              <MdArrowForward size={18} />
+            </button>
           </div>
         </div>
       </AnimationWrapper>
 
       <AnimationWrapper delay={1.25}>
         <Swiper
-          onReachBeginning={() => setIsActive(true)}
-          onReachEnd={() => setIsActive(false)}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+            handleSlideChange(swiper);
+          }}
+          onSlideChange={handleSlideChange}
+          onReachBeginning={handleSlideChange}
+          onReachEnd={handleSlideChange}
           pagination={{
             dynamicBullets: true,
           }}
           breakpoints={{
-            310: {
+            0: {
               slidesPerView: 1,
+              spaceBetween: 24,
             },
-            756: {
+            768: {
               slidesPerView: 2,
+              spaceBetween: 32,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 24,
             },
           }}
           modules={[Pagination]}
-          spaceBetween={100}
+          spaceBetween={24}
           className="w-full"
         >
           {projects.map((project) => {

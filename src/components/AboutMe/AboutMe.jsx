@@ -1,6 +1,9 @@
 import AnimationWrapper from "../AnimationWrapper";
 
 const AboutMe = () => {
+  const careerStartYear = 2022;
+  const yearsOfExperience = new Date().getFullYear() - careerStartYear;
+
   return (
     <div className="px-2 md:px-[100px] lg:px-[400px]">
       <div className="h-full flex flex-col items-center gap-5 justify-center font-ubuntu px-4 py-12 md:p-12">
@@ -13,10 +16,10 @@ const AboutMe = () => {
 
           <AnimationWrapper delay={1.25}>
             <p className="text-lg text-justify font-normal opacity-70">
-              I am a skilled Full Stack Developer with a strong focus on front-end technologies. With 3+ years of
-              experience in the industry, I have honed my expertise in modern front-end development, mastering
-              technologies like HTML, CSS, React.js, Next.js, and Redux. I also have experience in mobile app
-              development using React Native and Expo.
+              I am a skilled Full Stack Developer with a strong focus on front-end technologies. With{" "}
+              {yearsOfExperience}+ years of experience in the industry, I have honed my expertise in modern front-end
+              development, mastering technologies like HTML, CSS, React.js, Next.js, and Redux. I also have experience
+              in mobile app development using React Native and Expo.
               <br />
               <br />
               On the back-end side, I am proficient in Node.js and Express.js, as well as Golang with the Gin framework.

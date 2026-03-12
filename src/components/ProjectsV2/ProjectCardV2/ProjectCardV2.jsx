@@ -1,16 +1,16 @@
 const ProjectCardV2 = ({ image, title, description, stacks, url }) => {
   return (
     <a
-      className="flex flex-col flex-wrap gap-6 w-[350px] group cursor-pointer h-[500px]"
-      href={url}
+      className="group mx-auto flex h-[500px] w-full max-w-[350px] flex-col flex-wrap gap-6 cursor-pointer"
+      href={url || null}
       target="_blank"
       rel="noreferrer"
     >
-      <div className="overflow-hidden">
+      <div className="overflow-hidden rounded-2xl">
         <img
           alt="project-img"
           src={image}
-          className="h-[300px] object-contain transform transition-transform duration-700 ease-in-out group-hover:scale-125"
+          className="h-[300px] w-full object-contain transform transition-transform duration-700 ease-in-out group-hover:scale-125"
         />
       </div>
 
