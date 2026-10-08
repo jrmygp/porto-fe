@@ -140,35 +140,25 @@ function App() {
 
           <AnimationWrapper delay={1.5}>
             <div className="flex items-center gap-5 flex-wrap">
-              <p className="text-5xl">React.JS</p>
+              <p className="text-5xl">React</p>
               <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">Next.JS</p>
+              <p className="text-5xl">Next</p>
               <div className="bg-white rounded-full h-2 w-2" />
               <p className="text-5xl">React Native</p>
               <div className="bg-white rounded-full h-2 w-2" />
               <p className="text-5xl">Golang</p>
               <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">Node.JS</p>
+              <p className="text-5xl">NodeJS</p>
               <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">Express</p>
+              <p className="text-5xl">Laravel</p>
               <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">Gin & GORM</p>
+              <p className="text-5xl">Cloud Deployment</p>
               <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">Sequelize</p>
-              <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">MySQL</p>
-              <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">Redux</p>
-              <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">AWS</p>
+              <p className="text-5xl">CI/CD pipelines</p>
               <div className="bg-white rounded-full h-2 w-2" />
               <p className="text-5xl">Docker</p>
               <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">Firebase</p>
-              <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">Expo</p>
-              <div className="bg-white rounded-full h-2 w-2" />
-              <p className="text-5xl">HTML & CSS</p>
+              <p className="text-5xl">Event Driven Architecture</p>
             </div>
           </AnimationWrapper>
         </div>

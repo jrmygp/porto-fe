@@ -16,19 +16,11 @@ const AboutMe = () => {
 
           <AnimationWrapper delay={1.25}>
             <p className="text-lg text-justify font-normal opacity-70">
-              I am a skilled Full Stack Developer with a strong focus on front-end technologies. With{" "}
-              {yearsOfExperience}+ years of experience in the industry, I have honed my expertise in modern front-end
-              development, mastering technologies like HTML, CSS, React.js, Next.js, and Redux. I also have experience
-              in mobile app development using React Native and Expo.
-              <br />
-              <br />
-              On the back-end side, I am proficient in Node.js and Express.js, as well as Golang with the Gin framework.
-              I have solid experience in managing databases with MySQL.
-              <br />
-              <br />
-              My career began with 1 year and 9 months as a Front End Developer at Kolabora Group, where I deepened my
-              knowledge in front-end development. Currently, I am a Full Stack Engineer at Sprint Asia, continuing to
-              apply my skills across both front-end and back-end development.
+              Senior Full Stack Developer with {yearsOfExperience}+ years of experience building scalable web and fintech applications
+              across frontend, backend, and cloud infrastructure. Experienced in leading product development,
+              modernizing engineering workflows with CI/CD and micro frontend architecture, and designing reliable
+              systems that support business growth. Passionate about solving complex technical problems and delivering
+              products that create real user value.
             </p>
           </AnimationWrapper>
         </div>
