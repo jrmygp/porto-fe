@@ -9,9 +9,50 @@ const Experience = () => {
       </AnimationWrapper>
 
       <div className="flex flex-col gap-20">
+        <AnimationWrapper delay={1.25}>
+          <div className="flex flex-col md:flex-row gap-10">
+            <p>MAY 2026 - CURRENT</p>
+
+            <div className="flex flex-col gap-2 max-w-96 md:max-w-[500px]">
+              <p>Senior Full Stack Developer, SingaPay</p>
+
+              <p className="text-sm text-justify opacity-55">
+                Senior Full Stack Developer and technical lead responsible for driving the architecture, development,
+                and delivery of high-availability financial platforms using Laravel, Golang, and React.js. Lead a
+                5-member engineering team across technical strategy, architecture decisions, feature planning,
+                production troubleshooting, and performance optimization, while serving as the primary technical owner
+                for Virtual Account services and banking integrations. Expanded Virtual Account coverage from 4 to 11
+                banking partners and helped support 250+ active merchants with over IDR 7 billion in daily transaction
+                volume. Drive cross-functional collaboration with Product, Business, and Engineering teams to translate
+                business requirements into scalable solutions, while leading major initiatives including the Payment
+                Link platform revamp and International Money Withdrawal features.
+              </p>
+
+              <div className="flex items-center gap-2 flex-wrap">
+                <div className="rounded-full py-1.5 px-4 bg-[#122b3c] text-sm items-center justify-center">
+                  React.js
+                </div>
+                <div className="rounded-full py-1.5 px-4 bg-[#122b3c] text-sm items-center justify-center">Laravel</div>
+                <div className="rounded-full py-1.5 px-4 bg-[#122b3c] text-sm items-center justify-center">Golang</div>
+                <div className="rounded-full py-1.5 px-4 bg-[#122b3c] text-sm items-center justify-center">
+                  PostgreSQL
+                </div>
+                <div className="rounded-full py-1.5 px-4 bg-[#122b3c] text-sm items-center justify-center">
+                  RabbitMQ
+                </div>
+                <div className="rounded-full py-1.5 px-4 bg-[#122b3c] text-sm items-center justify-center">Fiber</div>
+                <div className="rounded-full py-1.5 px-4 bg-[#122b3c] text-sm items-center justify-center">Docker</div>
+                <div className="rounded-full py-1.5 px-4 bg-[#122b3c] text-sm items-center justify-center">
+                  Tailwind
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimationWrapper>
+
         <AnimationWrapper delay={1.5}>
           <div className="flex flex-col md:flex-row gap-10">
-            <p>JUNE 2024 - PRESENT</p>
+            <p>JUNE 2024 - APRIL 2026</p>
 
             <div className="flex flex-col gap-2 max-w-96 md:max-w-[500px]">
               <p>Full Stack Engineer, Sprint Asia</p>

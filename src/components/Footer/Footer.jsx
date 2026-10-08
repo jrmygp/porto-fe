@@ -52,12 +52,6 @@ const Footer = () => {
               </a>
             </AnimationWrapper>
 
-            <AnimationWrapper delay={2.5}>
-              <a target="_blank" href="https://steamcommunity.com/profiles/76561198174082859/">
-                <FaSteam size={28} />
-              </a>
-            </AnimationWrapper>
-
             <AnimationWrapper delay={2.75}>
               <a target="_blank" href="https://www.linkedin.com/in/jeremy-puglisi-00b8bb1ab/">
                 <FaLinkedin size={28} />

@@ -14,8 +14,11 @@ import Healthymed from "@/assets/project/healthymed.png";
 import Konekt from "@/assets/project/konekt.png";
 import Radix from "@/assets/project/radix.png";
 import ScentLab from "@/assets/project/scentlab.png";
+import SingaPay from "@/assets/project/singapay.png";
+import PaymentLink from "@/assets/project/payment-link.png";
 
 import React from "@/assets/react.png";
+import Laravel from "@/assets/laravel.png";
 import Next from "@/assets/nextjs.png";
 import redux from "@/assets/redux.png";
 import mui from "@/assets/mui.png";
@@ -26,6 +29,7 @@ import tailwind from "@/assets/tailwind.png";
 import node from "@/assets/node.png";
 import express from "@/assets/express_js.png";
 import mysql from "@/assets/mysql.png";
+import postgresql from "@/assets/postgres.png";
 import chakra from "@/assets/chakra.png";
 import golang from "@/assets/go.png";
 import gin from "@/assets/gin.png";
@@ -45,11 +49,19 @@ const ProjectsV2 = () => {
   const projects = [
     {
       id: randomId(),
-      title: "Prezent Loyalty",
-      description: "Admin dashboard for Sandeza's digital campaign product",
-      image: Prezent,
-      url: "https://sandeza.id/prezent/campaign",
-      stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
+      title: "SingaPay",
+      description: "Payment gateway system serving over 250+ active merchants",
+      image: SingaPay,
+      url: "https://payment-b2b.singapay.id/login",
+      stacks: [{ img: Laravel }, { img: golang }, { img: React }, { img: postgresql }],
+    },
+    {
+      id: randomId(),
+      title: "SingaPay Payment Link",
+      description: "Payment link page for merchants to receive payments from their customers powered by SingaPay",
+      image: PaymentLink,
+      url: "https://payment-link.singapay.id",
+      stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: Laravel }, { img: postgresql }],
     },
     {
       id: randomId(),
@@ -75,54 +87,6 @@ const ProjectsV2 = () => {
       image: Nest,
       url: "https://play.google.com/store/apps/details?id=com.kolabora.kssmobileapp&hl=id",
       stacks: [{ img: reactNative }, { img: expo }, { img: redux }],
-    },
-    {
-      id: randomId(),
-      title: "Radix Dashboard App",
-      description: "Dashboard app to track quotation, invoicement, and shipment for freight forwarders company.",
-      image: Radix,
-      url: "http://54.227.49.219:4173/",
-      stacks: [{ img: React }, { img: redux }, { img: tailwind }, { img: golang }, { img: gin }, { img: mysql }],
-    },
-    {
-      id: randomId(),
-      title: "The Scent Lab",
-      description: "Scent personality generator based on quiz",
-      image: ScentLab,
-      url: "https://thescentlab.id/",
-      stacks: [{ img: React }, { img: mui }, { img: firebase }],
-    },
-    {
-      id: randomId(),
-      title: "Healthymed",
-      description: "An e-commerce based platform for medicine",
-      image: Healthymed,
-      url: "https://github.com/purwadhikafullstack/jcwd-2002-02-fe",
-      stacks: [
-        { img: React },
-        { img: Next },
-        { img: redux },
-        { img: mui },
-        { img: node },
-        { img: express },
-        { img: mysql },
-      ],
-    },
-    {
-      id: randomId(),
-      title: "Konekt",
-      description: "Social media app",
-      image: Konekt,
-      url: "https://github.com/jrmygp/project-next.git",
-      stacks: [
-        { img: React },
-        { img: Next },
-        { img: redux },
-        { img: chakra },
-        { img: node },
-        { img: express },
-        { img: mysql },
-      ],
     },
   ];
 
