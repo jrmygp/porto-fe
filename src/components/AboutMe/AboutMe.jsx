@@ -6,7 +6,7 @@ const AboutMe = () => {
 
   return (
     <div className="px-2 md:px-[100px] lg:px-[400px]">
-      <div className="h-full flex flex-col items-center gap-5 justify-center font-ubuntu px-4 py-12 md:p-12">
+      <div className="h-full flex flex-col items-center gap-5 justify-center font-ubuntu py-12">
         <div className="flex flex-col gap-10 text-left">
           <AnimationWrapper delay={1}>
             <p className="text-5xl font-semibold opacity-90">
