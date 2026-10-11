@@ -10,10 +10,10 @@ const Experience = () => {
 
       <div className="flex flex-col gap-20">
         <AnimationWrapper delay={1.25}>
-          <div className="flex flex-col md:flex-row gap-10">
-            <p>MAY 2026 - CURRENT</p>
+          <div className="flex flex-col md:grid md:grid-cols-4 gap-4">
+            <p className="md:col-span-1 text-sm">MAY 2026 - CURRENT</p>
 
-            <div className="flex flex-col gap-2 max-w-96 md:max-w-[500px]">
+            <div className="flex flex-col gap-2 md:col-span-3">
               <p>Senior Full Stack Developer, SingaPay</p>
 
               <p className="text-sm text-justify opacity-55">
@@ -51,10 +51,10 @@ const Experience = () => {
         </AnimationWrapper>
 
         <AnimationWrapper delay={1.5}>
-          <div className="flex flex-col md:flex-row gap-10">
-            <p>JUNE 2024 - APRIL 2026</p>
+          <div className="flex flex-col md:grid md:grid-cols-4 gap-4">
+            <p className="md:col-span-1 text-sm">JUNE 2024 - APRIL 2026</p>
 
-            <div className="flex flex-col gap-2 max-w-96 md:max-w-[500px]">
+            <div className="flex flex-col gap-2 md:col-span-3">
               <p>Full Stack Engineer, Sprint Asia</p>
 
               <p className="text-sm text-justify opacity-55">
@@ -85,10 +85,10 @@ const Experience = () => {
         </AnimationWrapper>
 
         <AnimationWrapper delay={1.75}>
-          <div className="flex flex-col md:flex-row gap-10">
-            <p>SEPT 2022 - JUNE 2024</p>
+          <div className="flex flex-col md:grid md:grid-cols-4 gap-4">
+            <p className="md:col-span-1 text-sm">SEPT 2022 - JUNE 2024</p>
 
-            <div className="flex flex-col gap-2 max-w-96 md:max-w-[500px]">
+            <div className="flex flex-col gap-2 md:col-span-3">
               <p>Frontend Developer, Kolabora Group</p>
 
               <p className="text-sm text-justify opacity-55">

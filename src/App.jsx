@@ -110,9 +110,9 @@ function App() {
 
           <div className={`${classes["layer"]} ${classes["layer_red"]}`}>
             <div className={`${`text-5xl md:text-8xl ${classes["text_container"]}`} ${classes["text_black"]}`}>
-              <div>SOFTWARE</div>
+              <div>SENIOR</div>
+              <div>FULLSTACK</div>
               <div>ENGINEER</div>
-              <div>DEVELOPER</div>
             </div>
           </div>
         </div>
@@ -123,13 +123,13 @@ function App() {
         <AboutMe />
       </section>
 
-      <section className="h-screen relative flex items-center" id="experiences">
+      <section className="relative flex items-center" id="experiences">
         <div className="absolute right-20 md:right-[500px] w-52 h-52 md:w-[200px] md:h-[200px] rounded-full bg-yellow-300 filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
         <div className="absolute right-14 md:right-[400px] w-52 h-52 md:w-[200px] md:h-[200px] rounded-full bg-green-300 filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
         <Experience />
       </section>
 
-      <section className="h-[700px] md:h-[500px] relative" id="technologies">
+      <section className="relative" id="technologies">
         <div className="absolute top-10 left-40 w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-yellow-300  filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
         <div className="absolute top-40 left-20 w-52 h-52 md:w-[500px] md:h-[500px] rounded-full bg-pink-300  filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
 
