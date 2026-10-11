@@ -16,6 +16,7 @@ import Radix from "@/assets/project/radix.png";
 import ScentLab from "@/assets/project/scentlab.png";
 import SingaPay from "@/assets/project/singapay.png";
 import PaymentLink from "@/assets/project/payment-link.png";
+import Kimo from "@/assets/project/kimo.png";
 
 import React from "@/assets/react.png";
 import Laravel from "@/assets/laravel.png";
@@ -34,6 +35,8 @@ import chakra from "@/assets/chakra.png";
 import golang from "@/assets/go.png";
 import gin from "@/assets/gin.png";
 import firebase from "@/assets/firebase.png";
+import kafka from "@/assets/kafka.png";
+import grpc from "@/assets/grpc.png";
 
 import AnimationWrapper from "../AnimationWrapper";
 
@@ -47,6 +50,14 @@ const ProjectsV2 = () => {
   };
 
   const projects = [
+    {
+      id: randomId(),
+      title: "Kimo Wallet",
+      description: "E-wallet application for users to manage their finances and make payments. Built using event-driven architecture with Golang, Kafka, and gRPC for high performance and scalability.",
+      image: Kimo,
+      url: "https://github.com/jrmygp/Kimo-Wallet.git",
+      stacks: [{ img: React }, { img: Next }, { img: golang }, { img: postgresql }, { img: kafka }, { img: grpc }],
+    },
     {
       id: randomId(),
       title: "SingaPay",
